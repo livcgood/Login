@@ -1,0 +1,466 @@
+/* Clearfix */
+.btn-group-vertical>.btn-group:after, .btn-group-vertical>.btn-group:before, .btn-toolbar:after, .btn-toolbar:before, .clearfix:after, .clearfix:before, .container-fluid:after, .container-fluid:before, .container:after, .container:before, .dl-horizontal dd:after, .dl-horizontal dd:before, .form-horizontal .form-group:after, .form-horizontal .form-group:before, .modal-footer:after, .modal-footer:before, .modal-header:after, .modal-header:before, .nav:after, .nav:before, .navbar-collapse:after, .navbar-collapse:before, .navbar-header:after, .navbar-header:before, .navbar:after, .navbar:before, .pager:after, .pager:before, .panel-body:after, .panel-body:before, .row:after, .row:before {
+    display: table;
+    content: " ";
+}
+
+.btn-group-vertical>.btn-group:after, .btn-group-vertical>.btn-group:before, .btn-toolbar:after, .btn-toolbar:before, .clearfix:after, .clearfix:before, .container-fluid:after, .container-fluid:before, .container:after, .container:before, .dl-horizontal dd:after, .dl-horizontal dd:before, .form-horizontal .form-group:after, .form-horizontal .form-group:before, .modal-footer:after, .modal-footer:before, .modal-header:after, .modal-header:before, .nav:after, .nav:before, .navbar-collapse:after, .navbar-collapse:before, .navbar-header:after, .navbar-header:before, .navbar:after, .navbar:before, .pager:after, .pager:before, .panel-body:after, .panel-body:before, .row:after, .row:before {
+    display: table;
+    content: " ";
+}
+
+.btn-group-vertical>.btn-group:after, .btn-toolbar:after, .clearfix:after, .container-fluid:after, .container:after, .dl-horizontal dd:after, .form-horizontal .form-group:after, .modal-footer:after, .modal-header:after, .nav:after, .navbar-collapse:after, .navbar-header:after, .navbar:after, .pager:after, .panel-body:after, .row:after {
+    clear: both;
+}
+
+var {
+    font-style: normal;
+}
+
+/* Modal */
+#myModal2 .modal-open {
+    overflow: hidden;
+}
+
+#myModal2 .modal-backdrop {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1040;
+    background-color: #000;
+}
+
+#myModal2 .modal-backdrop.fade {
+    filter: alpha(opacity=0);
+    opacity: 0;
+}
+
+#myModal2 .modal-backdrop.show {
+    filter: alpha(opacity=50);
+    opacity: .5;
+}
+
+#myModal2 {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 9999;
+    display: none;
+    overflow: hidden;
+    -webkit-overflow-scrolling: touch;
+    outline: 0;
+}
+
+.modal-open #myModal2 {
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+#myModal2 .modal-dialog {
+    position: relative;
+    width: auto;
+    margin: 10px;
+}
+
+@media (min-width: 768px) {
+    #myModal2 .modal-dialog {
+        width: 600px;
+        margin: 30px auto;
+    }
+}
+
+#myModal2.fade .modal-dialog {
+    -webkit-transform: translate(0,-25%);
+    -ms-transform: translate(0,-25%);
+    -o-transform: translate(0,-25%);
+    transform: translate(0,-25%);
+    -webkit-transition: -webkit-transform .3s ease-out;
+    -o-transition: -o-transform .3s ease-out;
+    transition: -webkit-transform .3s ease-out;
+    transition: transform .3s ease-out;
+    transition: transform .3s ease-out,-webkit-transform .3s ease-out,-o-transform .3s ease-out;
+}
+
+#myModal2.show .modal-dialog {
+    -webkit-transform: translate(0,0);
+    -ms-transform: translate(0,0);
+    -o-transform: translate(0,0);
+    transform: translate(0,0);
+}
+
+#myModal2.left .modal-dialog, #myModal2.right .modal-dialog {
+    position: fixed;
+    margin: auto;
+    max-width: 420px;
+    height: 100%;
+    -webkit-transform: translate3d(0%, 0, 0);
+    -ms-transform: translate3d(0%, 0, 0);
+    -o-transform: translate3d(0%, 0, 0);
+    transform: translate3d(0%, 0, 0);
+}
+
+#myModal2.right.fade .modal-dialog {
+    right: -320px;
+    -webkit-transition: opacity 0.3s linear, right 0.3s ease-out;
+    -moz-transition: opacity 0.3s linear, right 0.3s ease-out;
+    -o-transition: opacity 0.3s linear, right 0.3s ease-out;
+    transition: opacity 0.3s linear, right 0.3s ease-out;
+}
+
+#myModal2.right.fade.show .modal-dialog {
+    right: 0;
+    /* background: #f4f4f4; */
+}
+
+#myModal2 .modal-content {
+    position: relative;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #999;
+    border: 1px solid rgba(0,0,0,.2);
+    border-radius: 6px;
+    -webkit-box-shadow: 0 3px 9px rgba(0,0,0,.5);
+    box-shadow: 0 3px 9px rgba(0,0,0,.5);
+    outline: 0;
+}
+
+@media (min-width: 768px) {
+    #myModal2 .modal-content {
+        -webkit-box-shadow: 0 5px 15px rgba(0,0,0,.5);
+        box-shadow: 0 5px 15px rgba(0,0,0,.5);
+    }
+}
+
+#myModal2 .modal-content {
+    border-radius: 0;
+    border: none;
+    /* background: #f4f4f4; */
+}
+
+#myModal2.left .modal-content, #myModal2.right .modal-content {
+    height: 100%;
+    overflow-y: auto;
+    /* background: #f4f4f4; */
+}
+
+#myModal2 .modal-header {
+    padding: 15px;
+    border-bottom: 1px solid #eeeeee;
+}
+
+#myModal2 .modal-body {
+    position: relative;
+    padding: 15px;
+}
+
+#myModal2.left .modal-body, #myModal2.right .modal-body {
+    padding: 0 0 50px;
+    background: #fff;
+}
+
+#myModal2 .close {
+    float: right;
+    font-size: 21px;
+    font-weight: 700;
+    line-height: 1;
+    color: #000;
+    text-shadow: 0 1px 0 #fff;
+    filter: alpha(opacity=20);
+    opacity: .2;
+}
+
+#myModal2 .close:focus, #myModal2 .close:hover {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+    filter: alpha(opacity=50);
+    opacity: .5;
+}
+
+#myModal2 button.close {
+    background: 0 0;
+    border: 0;
+    cursor: pointer;
+    margin: 0 0 0 auto;
+    padding: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+#myModal2 .modal-header .close {
+    color: #000;
+    font-size: 13px;
+    margin-top: -2px;
+}
+
+#myModal2 .modal-header .close small{
+    font-size: 12px;
+}
+
+#myModal2 .top0 {
+    display: none;
+    margin: 0;
+    padding: 7px 18px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#myModal2 .modal-body .shiping {
+    /* background: #FFF8FC; */
+    width: 90%;
+    margin: 0 auto;
+    padding: 13px 13px 15px;
+    /* border: 1px solid #66a92f; */
+}
+
+#myModal2 .modal-body .shiping label {
+    font-weight: normal;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+#myModal2 .modal-body .shiping select {
+    border: 1px solid #66a92f;
+    border-radius: .25rem;
+    height: 36px;
+    width: 100%;
+    padding: 8px;
+    margin: 17px 0 0;
+    font-size: 13px;
+}
+
+#myModal2 .item-cart {
+    width: 90%;
+    margin: 10px auto;
+    padding: 13px 13px 15px;
+    position: relative;
+    /* border: 1px solid #66a92f;
+    background: #FFF8FC; */
+}
+
+#myModal2 .item-cart .itembar {
+    margin: 4px 0;
+    border-bottom: 1px solid #66a92f;
+    display: inline-block;
+    padding: 0 0 15px;
+    width: 100%;
+}
+
+#myModal2 .porimh {
+    float: left;
+    width: 19%;
+}
+
+#myModal2 .porimh img {
+    display: inline-block;
+    max-width: 100%;
+    height: auto;
+}
+
+#myModal2 .item-cart .itembar .imag-pri {
+    float: left;
+    width: 43%;
+    padding: 13px 0px 0 7px;
+}
+
+#myModal2 .item-cart .itembar .imag-pri h2 {
+    font-weight: normal;
+    font-size: 13px !important;
+    margin: 3px 0;
+    line-height: normal !important;
+    padding: 0 !important;
+}
+
+#myModal2 .item-cart .itembar .imag-pri h4 {
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 1.1;
+    margin: 6px 0;
+}
+
+[data-currency-symbol-left]::before {
+    content: attr(data-currency-symbol-left);
+}
+
+#myModal2 .item-cart .itembar select {
+    border: 1px solid #66a92f;
+    border-radius: .25rem;
+    padding: 6px;
+    margin: 17px 0 0;
+}
+
+#myModal2 .item-cart .itembar .price, .more-item .itembar .price {
+    width: 20%;
+    float: right;
+    text-align: right;
+    margin: 26px 0 0;
+}
+
+#myModal2 h5.executive {
+    background: #0DA4DF;
+    margin: 0;
+    color: #fff;
+    padding: 10px;
+    font-size: 17px;
+    margin: 0 5%;
+}
+
+#myModal2 .more-item {
+    width: 90%;
+    margin: 0 5% 10px;
+    position: relative;
+    border: 1px solid #66a92f;
+    background: #FFF8FC;
+    display: inline-block;
+    padding: 13px 13px 15px;
+}
+
+#myModal2 .more-item p {
+    font-size: 14px !important;
+    padding: 0 13px;
+}
+
+#myModal2 .imag-pri {
+    float: left;
+    width: 43%;
+    padding: 13px 0px 0 7px;
+}
+
+#myModal2 .imag-pri h2 {
+    font-weight: normal;
+    font-size: 13px !important;
+    margin: 3px 0;
+    line-height: normal !important;
+    padding: 0 !important;
+}
+
+#myModal2 .add-pri {
+    border: 1px solid #66a92f;
+    padding: 6px;
+    margin: 17px 0 0;
+    width: 16%;
+    float: left;
+    color: #0DA4DF;
+    text-align: center;
+}
+
+#myModal2 .item-adres {
+    width: 90%;
+    margin: 0 auto 30px;
+    padding: 13px 13px 15px;
+    /* border: 1px solid #66a92f;
+    background: #FFF8FC; */
+}
+
+#myModal2 .item-adres-br h3 {
+    color: #66a92f;
+    margin: 0 0 10px !important;
+    font-size: 20px !important;
+    line-height: normal !important;
+}
+
+.item-adres ul li {
+    line-height: 17.1429px;
+    margin: 0;
+    display: inline-block;
+    width: 100%;
+}
+
+#myModal2 .item-adres ul li strong {
+    font-weight: normal;
+    width: 50%;
+    float: left;
+    display: inline-block;
+    font-size: 12px;
+}
+
+#myModal2 .item-adres ul li span {
+    width: 50%;
+    float: right;
+    text-align: right;
+}
+
+#myModal2 .item-adres ul li label {
+    width: 50%;
+    font-size: 13px;
+    font-weight: normal;
+}
+
+#myModal2 .item-adres ul li span.rss {
+    color: #ED1C24;
+    font-size: 12px;
+}
+
+#myModal2 .item-butn {
+    background: #fff;
+    display: inline-block;
+    width: 100%;
+    padding: 10px 7px;
+    position: fixed;
+    bottom: 0;
+    height: 54px;
+    z-index: 999;
+    left: 0;
+}
+
+#myModal2 .item-butn ul {
+    margin: 0;
+    list-style-type:none;
+}
+
+#myModal2 .item-butn li {
+    float: left;
+    margin: 1%;
+    width: 48%;
+    text-align: center;
+}
+
+.item-butn li a {
+    background: #66a92f;
+    border: 1px solid #66a92f;
+    border-radius: .25rem;
+    display: inline-block;
+    width: 100%;
+    font-size: 10px;
+	font-weight: bold;
+    color: #fff !important;
+    line-height: 14.2857px;
+    margin: 0;
+    padding: 10px;
+    letter-spacing: 0.4px;
+}
+
+.item-butn li:last-child a{}
+#myModal2 .item-butn li 
+{
+    float: left;
+    margin: 1%;
+    width: 48%;
+    text-align: center;
+}
+
+#myModal2 .item-butn{
+    background: #fff;
+    display: inline-block;
+    width: 100%;
+    padding: 10px 7px;
+    position: fixed;
+    bottom: 0;
+    height: 54px;
+    z-index: 999;
+    left: 0;
+}
+
+#myModal2 .item-cart .itembar select {
+    width: unset;
+}
+
+#myModal2 .item-adres-br ul {
+    margin: 0;
+}
+
