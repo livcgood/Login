@@ -1,0 +1,2181 @@
+import { _ as __vue_normalize__, V as Vue } from '../../normalize-component-eda3f72a.js';
+import { v as vueCustomElement } from '../../vue-custom-element.esm-21931c14.js';
+import { _ as __vue_create_injector__ } from '../../browser-e4cbaf23.js';
+import { _ as __assign, a as __awaiter, b as __generator } from '../../tslib.es6-79a6072b.js';
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+var script = {
+    name: 'checkbox-slider',
+    props: {
+        value: Boolean
+    }
+};
+
+/* script */
+const __vue_script__ = script;
+
+/* template */
+var __vue_render__ = function () {
+  var _vm = this;
+  var _h = _vm.$createElement;
+  var _c = _vm._self._c || _h;
+  return _c("label", { staticClass: "switch no-margin-bottom" }, [
+    _c("input", {
+      attrs: { type: "checkbox" },
+      domProps: { checked: _vm.value },
+      on: {
+        input: function ($event) {
+          return _vm.$emit("input", !_vm.value)
+        },
+      },
+    }),
+    _vm._v(" "),
+    _c("span", { staticClass: "slider round" }),
+  ])
+};
+var __vue_staticRenderFns__ = [];
+__vue_render__._withStripped = true;
+
+  /* style */
+  const __vue_inject_styles__ = function (inject) {
+    if (!inject) return
+    inject("data-v-31de96d7_0", { source: "\n.no-margin-bottom[data-v-31de96d7] {\n  margin-bottom: 0;\n}\n/* The switch - the box around the slider */\n.switch[data-v-31de96d7] {\n  position: relative;\n  display: inline-block;\n  width: 30px;\n  height: 17px;\n}\n\n/* Hide default HTML checkbox */\n.switch input[data-v-31de96d7] {\n  opacity: 0;\n  width: 0;\n  height: 0;\n}\n\n/* The slider */\n.slider[data-v-31de96d7] {\n  position: absolute;\n  cursor: pointer;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  background-color: #ccc;\n  -webkit-transition: .4s;\n  transition: .4s;\n}\n.slider[data-v-31de96d7]:before {\n  position: absolute;\n  content: \"\";\n  height: 13px;\n  width: 13px;\n  left: 2px;\n  bottom: 2px;\n  background-color: white;\n  -webkit-transition: .4s;\n  transition: .4s;\n}\ninput:checked + .slider[data-v-31de96d7] {\n  background-color: #2196F3;\n}\ninput:focus + .slider[data-v-31de96d7] {\n  box-shadow: 0 0 0.5px #2196F3;\n}\ninput:checked + .slider[data-v-31de96d7]:before {\n  -webkit-transform: translateX(13px);\n  -ms-transform: translateX(13px);\n  transform: translateX(13px);\n}\n\n/* Rounded sliders */\n.slider.round[data-v-31de96d7] {\n  border-radius: 17px;\n}\n.slider.round[data-v-31de96d7]:before {\n  border-radius: 50%;\n}\n", map: {"version":3,"sources":["/usr/local/www/lgd/powerline/js/src/elements/shoppingCart/components/CheckboxSlider.vue"],"names":[],"mappings":";AAQA;EACA,gBAAA;AACA;AACA,2CAAA;AACA;EACA,kBAAA;EACA,qBAAA;EACA,WAAA;EACA,YAAA;AACA;;AAEA,+BAAA;AACA;EACA,UAAA;EACA,QAAA;EACA,SAAA;AACA;;AAEA,eAAA;AACA;EACA,kBAAA;EACA,eAAA;EACA,MAAA;EACA,OAAA;EACA,QAAA;EACA,SAAA;EACA,sBAAA;EACA,uBAAA;EACA,eAAA;AACA;AAEA;EACA,kBAAA;EACA,WAAA;EACA,YAAA;EACA,WAAA;EACA,SAAA;EACA,WAAA;EACA,uBAAA;EACA,uBAAA;EACA,eAAA;AACA;AAEA;EACA,yBAAA;AACA;AAEA;EACA,6BAAA;AACA;AAEA;EACA,mCAAA;EACA,+BAAA;EACA,2BAAA;AACA;;AAEA,oBAAA;AACA;EACA,mBAAA;AACA;AAEA;EACA,kBAAA;AACA","file":"CheckboxSlider.vue","sourcesContent":["<template>\n    <label class=\"switch no-margin-bottom\">\n        <input @input=\"$emit('input', !value)\" :checked=\"value\" type=\"checkbox\">\n        <span class=\"slider round\"></span>\n    </label>\n</template>\n\n<style scoped>\n.no-margin-bottom {\n  margin-bottom: 0;\n}\n/* The switch - the box around the slider */\n.switch {\n  position: relative;\n  display: inline-block;\n  width: 30px;\n  height: 17px;\n}\n\n/* Hide default HTML checkbox */\n.switch input {\n  opacity: 0;\n  width: 0;\n  height: 0;\n}\n\n/* The slider */\n.slider {\n  position: absolute;\n  cursor: pointer;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  background-color: #ccc;\n  -webkit-transition: .4s;\n  transition: .4s;\n}\n\n.slider:before {\n  position: absolute;\n  content: \"\";\n  height: 13px;\n  width: 13px;\n  left: 2px;\n  bottom: 2px;\n  background-color: white;\n  -webkit-transition: .4s;\n  transition: .4s;\n}\n\ninput:checked + .slider {\n  background-color: #2196F3;\n}\n\ninput:focus + .slider {\n  box-shadow: 0 0 0.5px #2196F3;\n}\n\ninput:checked + .slider:before {\n  -webkit-transform: translateX(13px);\n  -ms-transform: translateX(13px);\n  transform: translateX(13px);\n}\n\n/* Rounded sliders */\n.slider.round {\n  border-radius: 17px;\n}\n\n.slider.round:before {\n  border-radius: 50%;\n}\n</style>\n\n<script>\nexport default {\n    name: 'checkbox-slider',\n    props: {\n        value: Boolean\n    }\n}\n</script>"]}, media: undefined });
+
+  };
+  /* scoped */
+  const __vue_scope_id__ = "data-v-31de96d7";
+  /* module identifier */
+  const __vue_module_identifier__ = undefined;
+  /* functional template */
+  const __vue_is_functional_template__ = false;
+  /* style inject SSR */
+  
+  /* style inject shadow dom */
+  
+
+  
+  const __vue_component__ = /*#__PURE__*/__vue_normalize__(
+    { render: __vue_render__, staticRenderFns: __vue_staticRenderFns__ },
+    __vue_inject_styles__,
+    __vue_script__,
+    __vue_scope_id__,
+    __vue_is_functional_template__,
+    __vue_module_identifier__,
+    false,
+    __vue_create_injector__,
+    undefined,
+    undefined
+  );
+
+//
+    var script$1 = {
+		components: {
+			CheckboxSlider: __vue_component__
+		},
+        props: {
+            product: Object,
+            currencySymbolRight: String,
+            currencySymbolLeft: String
+		},
+		data: function () {
+			return {
+				quantity: this.product.quantity,
+				max: this.product.max,
+				autoship: this.product.allowAutoship && this.product.autoship,
+                salePrice: (this.product.price - this.product.sale).toFixed(2)          
+			}
+		},
+		watch: {
+			autoship(n) {
+				this.autoshipChanged(n);
+			},
+			quantity(n) {
+				this.quantityChanged(n);
+			}
+		},
+		methods: {
+			// increaseQuantity: function () {
+			// 	this.product.quantity += 1;
+			// 	this.$emit('increaseQuantity', this.product);
+			// },
+			// decreaseQuantity: function () {
+			// 	this.product.quantity -= 1;
+			// 	this.$emit('decreaseQuantity', this.product);
+			// },
+			autoshipChanged(autoship) {
+				this.product.autoship = autoship;
+				this.$emit('changeProduct', this.product);
+			},
+			quantityChanged: function (quantity) {
+				this.product.quantity = quantity;
+				this.$emit('changeProduct', this.product);
+			},
+			deleteItem: function () {
+				this.product.quantity = 0;
+				this.$emit('changeProduct', this.product);
+			}
+		},
+		computed: {
+			calculatedBV: function () {
+				if (this.product.product_months > 1) {
+					return this.product.bv + this.product.monthly_bv * (this.product.product_months - 1)
+				} else {
+					return this.product.bv
+				}
+			},
+			formatPrice: function () {
+				let subTotalDecimal = this.product.price - Math.floor(this.product.price);
+
+
+				if (subTotalDecimal > 0) {
+					return this.product.price;
+				} else {
+					return parseInt(this.product.price);
+				}
+			}
+		}
+    };
+
+/* script */
+const __vue_script__$1 = script$1;
+
+/* template */
+var __vue_render__$1 = function () {
+  var _vm = this;
+  var _h = _vm.$createElement;
+  var _c = _vm._self._c || _h;
+  return _c("div", [
+    _vm.product.saleMessage
+      ? _c(
+          "div",
+          [
+            _c(
+              "center",
+              {
+                staticClass: "top0",
+                staticStyle: { color: "red", "padding-bottom": "0px" },
+              },
+              [
+                _vm._v(_vm._s(_vm.product.saleMessage) + " "),
+                _c(
+                  "span",
+                  {
+                    attrs: {
+                      "data-currency-symbol-right": _vm.currencySymbolRight,
+                      "data-currency-symbol-left": _vm.currencySymbolLeft,
+                    },
+                  },
+                  [_vm._v(_vm._s(_vm.product.salePrice))]
+                ),
+              ]
+            ),
+          ],
+          1
+        )
+      : _vm._e(),
+    _vm._v(" "),
+    _vm.product.sale
+      ? _c(
+          "div",
+          [
+            _c(
+              "center",
+              {
+                staticClass: "top0",
+                staticStyle: { color: "red", "padding-bottom": "0px" },
+              },
+              [
+                _vm._v("Save "),
+                _c(
+                  "span",
+                  {
+                    attrs: {
+                      "data-currency-symbol-right": _vm.currencySymbolRight,
+                      "data-currency-symbol-left": _vm.currencySymbolLeft,
+                    },
+                  },
+                  [_vm._v(_vm._s(_vm.product.sale))]
+                ),
+                _vm._v(" Each!"),
+              ]
+            ),
+          ],
+          1
+        )
+      : _vm._e(),
+    _vm._v(" "),
+    _c("div", { staticClass: "itembar flex-column" }, [
+      _c(
+        "div",
+        {
+          staticClass: "flex-row space-between align-items-center tiny-padding",
+        },
+        [
+          _c("div", { staticClass: "porimh" }, [
+            _c("img", { attrs: { src: _vm.product.image } }),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "imag-pri" }, [
+            _c("h2", [_c("var", [_vm._v(_vm._s(_vm.product.name) + " ")])]),
+            _vm._v(" "),
+            _vm.product.flavor
+              ? _c("h4", [
+                  _vm._v("Flavor: "),
+                  _c("var", [_vm._v(_vm._s(_vm.product.flavor))]),
+                ])
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.product.size
+              ? _c("h4", [
+                  _vm._v("Concentration: "),
+                  _c("var", [_vm._v(_vm._s(_vm.product.size))]),
+                ])
+              : _vm._e(),
+          ]),
+          _vm._v(" "),
+          _vm.max > 1 && !_vm.product.free
+            ? _c("div", [
+                _vm.max > 1 && !_vm.product.free
+                  ? _c(
+                      "select",
+                      {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.quantity,
+                            expression: "quantity",
+                          },
+                        ],
+                        attrs: { notranslate: "" },
+                        on: {
+                          change: function ($event) {
+                            var $$selectedVal = Array.prototype.filter
+                              .call($event.target.options, function (o) {
+                                return o.selected
+                              })
+                              .map(function (o) {
+                                var val = "_value" in o ? o._value : o.value;
+                                return val
+                              });
+                            _vm.quantity = $event.target.multiple
+                              ? $$selectedVal
+                              : $$selectedVal[0];
+                          },
+                        },
+                      },
+                      _vm._l(_vm.max + 1, function (n) {
+                        return _c(
+                          "option",
+                          { key: n, domProps: { value: n - 1 } },
+                          [_vm._v(_vm._s(n - 1))]
+                        )
+                      }),
+                      0
+                    )
+                  : _vm._e(),
+              ])
+            : _vm.product.free
+            ? _c("div", [_c("var", [_vm._v(_vm._s(_vm.quantity))])])
+            : _vm.product.isSpecialPackMainProduct
+            ? _c("div", [_c("var", [_vm._v(_vm._s(_vm.quantity))])])
+            : _c("div", [
+                _c("p", { staticClass: "no-margin-bottom" }, [_vm._v("1")]),
+              ]),
+          _vm._v(" "),
+          _vm.max == 1
+            ? _c("div", [
+                _c("i", {
+                  staticClass: "fas fa-times-circle cursor-pointer",
+                  on: { click: _vm.deleteItem },
+                }),
+              ])
+            : _vm._e(),
+          _vm._v(" "),
+          !_vm.product.free && !_vm.product.sale
+            ? _c(
+                "div",
+                {
+                  staticClass: "price",
+                  style: { "margin-top": 0 },
+                  attrs: {
+                    "data-currency-symbol-right": _vm.currencySymbolRight,
+                    "data-currency-symbol-left": _vm.currencySymbolLeft,
+                  },
+                },
+                [
+                  _c("var", [
+                    _vm._v(
+                      "\n\t\t\t\t" + _vm._s(_vm.formatPrice) + "\n\t\t\t\t"
+                    ),
+                  ]),
+                ]
+              )
+            : _vm._e(),
+          _vm._v(" "),
+          _vm.product.sale
+            ? _c("div", { staticClass: "price" }, [
+                _c("s", [
+                  _c(
+                    "span",
+                    {
+                      staticStyle: { "text-decoration": "line-through" },
+                      attrs: {
+                        "data-currency-symbol-right": _vm.currencySymbolRight,
+                        "data-currency-symbol-left": _vm.currencySymbolLeft,
+                      },
+                    },
+                    [_vm._v(_vm._s(_vm.formatPrice))]
+                  ),
+                ]),
+                _c("br"),
+                _vm._v(" "),
+                _c(
+                  "span",
+                  {
+                    attrs: {
+                      "data-currency-symbol-right": _vm.currencySymbolRight,
+                      "data-currency-symbol-left": _vm.currencySymbolLeft,
+                    },
+                  },
+                  [_vm._v(_vm._s(_vm.salePrice))]
+                ),
+              ])
+            : _vm._e(),
+        ]
+      ),
+      _vm._v(" "),
+      _vm.product.allowAutoship
+        ? _c(
+            "div",
+            { staticClass: "slider-parent" },
+            [
+              _c("div", { staticClass: "slight-margin-right" }, [
+                _vm._v("Autoship"),
+              ]),
+              _vm._v(" "),
+              _c("checkbox-slider", {
+                model: {
+                  value: _vm.autoship,
+                  callback: function ($$v) {
+                    _vm.autoship = $$v;
+                  },
+                  expression: "autoship",
+                },
+              }),
+            ],
+            1
+          )
+        : _vm._e(),
+      _vm._v(" "),
+      _vm.product.specialPackSubProducts
+        ? _c(
+            "div",
+            { staticClass: "flex-column", attrs: { notranslate: "" } },
+            _vm._l(_vm.product.specialPackSubProducts, function (subProduct) {
+              return _c(
+                "p",
+                {
+                  key: subProduct.id,
+                  staticClass: "no-margin-bottom unset-font",
+                },
+                [
+                  _vm._v(
+                    "\n\t\t\t\t" +
+                      _vm._s(subProduct.quantity) +
+                      "\n\t\t\t\t" +
+                      _vm._s(subProduct.name) +
+                      "\n\t\t\t\t"
+                  ),
+                  subProduct.flavor
+                    ? _c("span", { staticClass: "pos-static unset-font" }, [
+                        _vm._v(
+                          "\n\t\t\t\t\t- " +
+                            _vm._s(subProduct.flavor) +
+                            "\n\t\t\t\t"
+                        ),
+                      ])
+                    : _vm._e(),
+                  _vm._v(" "),
+                  subProduct.size
+                    ? _c("span", { staticClass: "pos-static unset-font" }, [
+                        _vm._v(
+                          "\n\t\t\t\t\t(" +
+                            _vm._s(subProduct.size) +
+                            ")\n\t\t\t\t"
+                        ),
+                      ])
+                    : _vm._e(),
+                ]
+              )
+            }),
+            0
+          )
+        : _vm._e(),
+    ]),
+  ])
+};
+var __vue_staticRenderFns__$1 = [];
+__vue_render__$1._withStripped = true;
+
+  /* style */
+  const __vue_inject_styles__$1 = function (inject) {
+    if (!inject) return
+    inject("data-v-283ed000_0", { source: "\n.slider-parent[data-v-283ed000] {\n\tdisplay: flex;\n\tflex-direction: row;\n\tjustify-content: flex-end;\n\talign-items: center;\n}\n.slight-margin-right[data-v-283ed000] {\n\tmargin-right: 5px;\n}\n.pos-static[data-v-283ed000] {\n\tposition:static !important;\n}\n.unset-font[data-v-283ed000] {\n\tfont-size: unset !important;\n}\n.cursor-pointer[data-v-283ed000] {\n\tcursor: pointer;\n}\n.no-margin-bottom[data-v-283ed000] {\n\tmargin-bottom: 0;\n}\n.flex-row[data-v-283ed000] {\n\tdisplay: flex;\n\tflex-direction: row;\n}\n.flex-column[data-v-283ed000] {\n\tdisplay: flex;\n\tflex-direction: column;\n}\n.indented[data-v-283ed000] {\n\twidth: 90%;\n\talign-self: flex-end;\n}\n.tiny-padding[data-v-283ed000] {\n\tpadding: 5px;\n}\n.space-between[data-v-283ed000] {\n\tjustify-content: space-between;\n}\n.align-items-center[data-v-283ed000] {\n\talign-items: center;\n}\n", map: {"version":3,"sources":["/usr/local/www/lgd/powerline/js/src/elements/shoppingCart/components/ShoppingCartItem.vue"],"names":[],"mappings":";AAgEA;CACA,aAAA;CACA,mBAAA;CACA,yBAAA;CACA,mBAAA;AACA;AACA;CACA,iBAAA;AACA;AACA;CACA,0BAAA;AACA;AACA;CACA,2BAAA;AACA;AACA;CACA,eAAA;AACA;AACA;CACA,gBAAA;AACA;AACA;CACA,aAAA;CACA,mBAAA;AACA;AACA;CACA,aAAA;CACA,sBAAA;AACA;AAEA;CACA,UAAA;CACA,oBAAA;AACA;AAEA;CACA,YAAA;AACA;AAEA;CACA,8BAAA;AACA;AAEA;CACA,mBAAA;AACA","file":"ShoppingCartItem.vue","sourcesContent":["<template>\n\t<div>\n\t\t<div v-if=\"product.saleMessage\">\n\t\t\t<center class=\"top0\" style=\"color:red;padding-bottom:0px;\">{{ product.saleMessage }} <span :data-currency-symbol-right=\"currencySymbolRight\" :data-currency-symbol-left=\"currencySymbolLeft\">{{ product.salePrice }}</span></center>\n\t\t</div>\n\t\t<div v-if=\"product.sale\">\n\t\t\t<center class=\"top0\" style=\"color:red;padding-bottom:0px;\">Save <span :data-currency-symbol-right=\"currencySymbolRight\" :data-currency-symbol-left=\"currencySymbolLeft\">{{ product.sale }}</span> Each!</center>\n\t\t</div>\n\t\t<div class=\"itembar flex-column\">\n\t\t\t<div class=\"flex-row space-between align-items-center tiny-padding\">\n\t\t\t\t<div class=\"porimh\"><img :src=\"product.image\"></div>\n\t\t\t\t<div class=\"imag-pri\">\n\t\t\t\t\t<h2><var>{{ product.name }} </var></h2>\n\t\t\t\t\t<h4 v-if=\"product.flavor\">Flavor: <var>{{ product.flavor }}</var></h4>\n\t\t\t\t\t<h4 v-if=\"product.size\">Concentration: <var>{{ product.size }}</var></h4>\n\t\t\t\t</div>\n\t\t\t\t<div v-if=\"max > 1 && !product.free\">\n\t\t\t\t\t<select notranslate v-if=\"max > 1 && !product.free\" v-model=\"quantity\">\n\t\t\t\t\t\t<option v-for=\"n in max + 1\" :key=\"n\" :value=\"n - 1\">{{ n - 1 }}</option>\n\t\t\t\t\t</select>\n\t\t\t\t</div>\n\t\t\t\t<div v-else-if=\"product.free\">\n\t\t\t\t\t<var>{{ quantity }}</var>\n\t\t\t\t</div>\n\t\t\t\t<div v-else-if=\"product.isSpecialPackMainProduct\">\n\t\t\t\t\t<var>{{ quantity }}</var>\n\t\t\t\t</div>\n\t\t\t\t<div v-else>\n\t\t\t\t\t<p class=\"no-margin-bottom\">1</p>\n\t\t\t\t</div>\n\t\t\t\t<div v-if=\"max == 1\">\n\t\t\t\t\t<i class=\"fas fa-times-circle cursor-pointer\" @click=\"deleteItem\"></i>\n\t\t\t\t</div>\n\t\t\t\t<div v-if=\"!product.free && !product.sale\" :data-currency-symbol-right=\"currencySymbolRight\" :data-currency-symbol-left=\"currencySymbolLeft\" class=\"price\" :style=\"{'margin-top': 0}\">\n\t\t\t\t\t<var>\n\t\t\t\t\t{{ formatPrice }}\n\t\t\t\t\t</var>\n\t\t\t\t</div>\n\t\t\t\t<div v-if=\"product.sale\" class=\"price\">\n\t\t\t\t\t\t<s><span :data-currency-symbol-right=\"currencySymbolRight\" :data-currency-symbol-left=\"currencySymbolLeft\" style=\"text-decoration:line-through\">{{ formatPrice }}</span></s><br>\n\t\t\t\t\t\t<span :data-currency-symbol-right=\"currencySymbolRight\" :data-currency-symbol-left=\"currencySymbolLeft\">{{ salePrice }}</span>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div v-if=\"product.allowAutoship\" class=\"slider-parent\">\n\t\t\t\t<div class=\"slight-margin-right\">Autoship</div>\n\t\t\t\t<checkbox-slider v-model=\"autoship\"></checkbox-slider>\n\t\t\t</div>\n\t\t\t<div notranslate v-if=\"product.specialPackSubProducts\" class=\"flex-column\">\n\t\t\t\t<p v-for=\"subProduct in product.specialPackSubProducts\"  :key=\"subProduct.id\" class=\"no-margin-bottom unset-font\">\n\t\t\t\t\t{{ subProduct.quantity }}\n\t\t\t\t\t{{ subProduct.name }}\n\t\t\t\t\t<span class=\"pos-static unset-font\" v-if=\"subProduct.flavor\">\n\t\t\t\t\t\t- {{ subProduct.flavor }}\n\t\t\t\t\t</span>\n\t\t\t\t\t<span class=\"pos-static unset-font\" v-if=\"subProduct.size\">\n\t\t\t\t\t\t({{ subProduct.size }})\n\t\t\t\t\t</span>\n\t\t\t\t</p>\n\t\t\t</div>\n\t\t</div>\n\t</div>\n</template>\n\n<style scoped>\n\t.slider-parent {\n\t\tdisplay: flex;\n\t\tflex-direction: row;\n\t\tjustify-content: flex-end;\n\t\talign-items: center;\n\t}\n\t.slight-margin-right {\n\t\tmargin-right: 5px;\n\t}\n\t.pos-static {\n\t\tposition:static !important;\n\t}\n\t.unset-font {\n\t\tfont-size: unset !important;\n\t}\n\t.cursor-pointer {\n\t\tcursor: pointer;\n\t}\n\t.no-margin-bottom {\n\t\tmargin-bottom: 0;\n\t}\n\t.flex-row {\n\t\tdisplay: flex;\n\t\tflex-direction: row;\n\t}\n\t.flex-column {\n\t\tdisplay: flex;\n\t\tflex-direction: column;\n\t}\n\n\t.indented {\n\t\twidth: 90%;\n\t\talign-self: flex-end;\n\t}\n\n\t.tiny-padding {\n\t\tpadding: 5px;\n\t}\n\n\t.space-between {\n\t\tjustify-content: space-between;\n\t}\n\n\t.align-items-center {\n\t\talign-items: center;\n\t}\n</style>\n\n<script>\n\timport CheckboxSlider from './CheckboxSlider.vue'\n    export default {\n\t\tcomponents: {\n\t\t\tCheckboxSlider\n\t\t},\n        props: {\n            product: Object,\n            currencySymbolRight: String,\n            currencySymbolLeft: String\n\t\t},\n\t\tdata: function () {\n\t\t\treturn {\n\t\t\t\tquantity: this.product.quantity,\n\t\t\t\tmax: this.product.max,\n\t\t\t\tautoship: this.product.allowAutoship && this.product.autoship,\n                salePrice: (this.product.price - this.product.sale).toFixed(2)          \n\t\t\t}\n\t\t},\n\t\twatch: {\n\t\t\tautoship(n) {\n\t\t\t\tthis.autoshipChanged(n)\n\t\t\t},\n\t\t\tquantity(n) {\n\t\t\t\tthis.quantityChanged(n)\n\t\t\t}\n\t\t},\n\t\tmethods: {\n\t\t\t// increaseQuantity: function () {\n\t\t\t// \tthis.product.quantity += 1;\n\t\t\t// \tthis.$emit('increaseQuantity', this.product);\n\t\t\t// },\n\t\t\t// decreaseQuantity: function () {\n\t\t\t// \tthis.product.quantity -= 1;\n\t\t\t// \tthis.$emit('decreaseQuantity', this.product);\n\t\t\t// },\n\t\t\tautoshipChanged(autoship) {\n\t\t\t\tthis.product.autoship = autoship\n\t\t\t\tthis.$emit('changeProduct', this.product)\n\t\t\t},\n\t\t\tquantityChanged: function (quantity) {\n\t\t\t\tthis.product.quantity = quantity;\n\t\t\t\tthis.$emit('changeProduct', this.product);\n\t\t\t},\n\t\t\tdeleteItem: function () {\n\t\t\t\tthis.product.quantity = 0;\n\t\t\t\tthis.$emit('changeProduct', this.product);\n\t\t\t}\n\t\t},\n\t\tcomputed: {\n\t\t\tcalculatedBV: function () {\n\t\t\t\tif (this.product.product_months > 1) {\n\t\t\t\t\treturn this.product.bv + this.product.monthly_bv * (this.product.product_months - 1)\n\t\t\t\t} else {\n\t\t\t\t\treturn this.product.bv\n\t\t\t\t}\n\t\t\t},\n\t\t\tformatPrice: function () {\n\t\t\t\tlet subTotalDecimal = this.product.price - Math.floor(this.product.price);\n\n\n\t\t\t\tif (subTotalDecimal > 0) {\n\t\t\t\t\treturn this.product.price;\n\t\t\t\t} else {\n\t\t\t\t\treturn parseInt(this.product.price);\n\t\t\t\t}\n\t\t\t}\n\t\t}\n    }\n\n</script>\n\n<style>\n</style>\n"]}, media: undefined })
+,inject("data-v-283ed000_1", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"ShoppingCartItem.vue"}, media: undefined });
+
+  };
+  /* scoped */
+  const __vue_scope_id__$1 = "data-v-283ed000";
+  /* module identifier */
+  const __vue_module_identifier__$1 = undefined;
+  /* functional template */
+  const __vue_is_functional_template__$1 = false;
+  /* style inject SSR */
+  
+  /* style inject shadow dom */
+  
+
+  
+  const __vue_component__$1 = /*#__PURE__*/__vue_normalize__(
+    { render: __vue_render__$1, staticRenderFns: __vue_staticRenderFns__$1 },
+    __vue_inject_styles__$1,
+    __vue_script__$1,
+    __vue_scope_id__$1,
+    __vue_is_functional_template__$1,
+    __vue_module_identifier__$1,
+    false,
+    __vue_create_injector__,
+    undefined,
+    undefined
+  );
+
+//
+//
+//
+//
+//
+//
+
+var script$2 = {
+    props: {
+        notification: String
+    }
+};
+
+/* script */
+const __vue_script__$2 = script$2;
+
+/* template */
+var __vue_render__$2 = function () {
+  var _vm = this;
+  var _h = _vm.$createElement;
+  var _c = _vm._self._c || _h;
+  return _c("div", { staticClass: "more-item" }, [
+    _c("p", { domProps: { innerHTML: _vm._s(_vm.notification) } }),
+  ])
+};
+var __vue_staticRenderFns__$2 = [];
+__vue_render__$2._withStripped = true;
+
+  /* style */
+  const __vue_inject_styles__$2 = undefined;
+  /* scoped */
+  const __vue_scope_id__$2 = undefined;
+  /* module identifier */
+  const __vue_module_identifier__$2 = undefined;
+  /* functional template */
+  const __vue_is_functional_template__$2 = false;
+  /* style inject */
+  
+  /* style inject SSR */
+  
+  /* style inject shadow dom */
+  
+
+  
+  const __vue_component__$2 = /*#__PURE__*/__vue_normalize__(
+    { render: __vue_render__$2, staticRenderFns: __vue_staticRenderFns__$2 },
+    __vue_inject_styles__$2,
+    __vue_script__$2,
+    __vue_scope_id__$2,
+    __vue_is_functional_template__$2,
+    __vue_module_identifier__$2,
+    false,
+    undefined,
+    undefined,
+    undefined
+  );
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+ var script$3 = {
+     props: {
+        scriptName: String
+        },
+     methods: {
+        closeModal() {
+           this.$emit('modal-closed');
+        },
+     
+        showHidePassword() {
+         var showHidePasswordBtn = document.getElementById('showHidePasswordBtn');
+         var passwordInput = document.getElementById('password');
+         if (passwordInput.type === "password") {
+             passwordInput.type = "text";
+
+             showHidePasswordBtn.innerHTML = '<i class="fas fa-eye"></i>';
+         } else {
+             passwordInput.type = "password";
+
+             showHidePasswordBtn.innerHTML = '<i class="fas fa-eye-slash"></i>';
+         }
+     }
+     },
+     created: function () {
+        console.log("login modal is open");
+     },
+};
+
+/* script */
+const __vue_script__$3 = script$3;
+
+/* template */
+var __vue_render__$3 = function () {
+  var _vm = this;
+  var _h = _vm.$createElement;
+  var _c = _vm._self._c || _h;
+  return _c("div", { attrs: { id: "loginModal" } }, [
+    _c(
+      "div",
+      { staticClass: "modal shoppingCartLoginModal", attrs: { id: "myModal" } },
+      [
+        _c("div", { staticClass: "modal-dialog modal-lg" }, [
+          _c("div", { staticClass: "modal-content" }, [
+            _c(
+              "button",
+              {
+                staticClass: "close",
+                staticStyle: { padding: "10px" },
+                attrs: { type: "button" },
+                on: {
+                  click: function ($event) {
+                    return _vm.closeModal()
+                  },
+                },
+              },
+              [_c("small", [_vm._v("Close ×")])]
+            ),
+            _vm._v(" "),
+            _c("div", { staticClass: "loginForm" }, [
+              _vm._m(0),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "tab-content", attrs: { id: "myTabContent" } },
+                [
+                  _c(
+                    "div",
+                    {
+                      staticClass: "tab-pane fade show active",
+                      attrs: {
+                        id: "home",
+                        role: "tabpanel",
+                        "aria-labelledby": "home-tab",
+                      },
+                    },
+                    [
+                      _c("div", { staticClass: "styled-form login-form" }, [
+                        _c(
+                          "form",
+                          {
+                            attrs: {
+                              method: "POST",
+                              action: "/login",
+                              name: "LOGIN",
+                            },
+                          },
+                          [
+                            _c("input", {
+                              attrs: {
+                                type: "hidden",
+                                name: "LOGIN",
+                                value: "1",
+                              },
+                            }),
+                            _vm._v(" "),
+                            _c("input", {
+                              attrs: {
+                                type: "hidden",
+                                name: "CSRFToken",
+                                value: "",
+                              },
+                            }),
+                            _vm._v(" "),
+                            _c("input", {
+                              attrs: { type: "hidden", name: "page" },
+                              domProps: { value: _vm.scriptName },
+                            }),
+                            _vm._v(" "),
+                            _c("input", {
+                              attrs: {
+                                type: "hidden",
+                                name: "openCart",
+                                value: "1",
+                              },
+                            }),
+                            _vm._v(" "),
+                            _c("input", {
+                              attrs: {
+                                type: "hidden",
+                                name: "lang",
+                                value: "en",
+                              },
+                            }),
+                            _vm._v(" "),
+                            _vm._m(1),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "form-group" }, [
+                              _c(
+                                "span",
+                                {
+                                  staticClass:
+                                    "adon-icon show-hide-password-btn",
+                                  attrs: { id: "showHidePasswordBtn" },
+                                  on: {
+                                    click: function ($event) {
+                                      return _vm.showHidePassword()
+                                    },
+                                  },
+                                },
+                                [_c("i", { staticClass: "fas fa-eye-slash" })]
+                              ),
+                              _vm._v(" "),
+                              _c("input", {
+                                attrs: {
+                                  type: "password",
+                                  id: "password",
+                                  name: "PASS",
+                                  value: "",
+                                  placeholder: "Enter Password",
+                                },
+                              }),
+                            ]),
+                            _vm._v(" "),
+                            _vm._m(2),
+                          ]
+                        ),
+                      ]),
+                    ]
+                  ),
+                ]
+              ),
+            ]),
+          ]),
+        ]),
+      ]
+    ),
+  ])
+};
+var __vue_staticRenderFns__$3 = [
+  function () {
+    var _vm = this;
+    var _h = _vm.$createElement;
+    var _c = _vm._self._c || _h;
+    return _c("div", { staticClass: "sec-title" }, [
+      _c("h2", [_vm._v("Account Login")]),
+      _vm._v(" "),
+      _c("div", { staticClass: "separate" }),
+    ])
+  },
+  function () {
+    var _vm = this;
+    var _h = _vm.$createElement;
+    var _c = _vm._self._c || _h;
+    return _c("div", { staticClass: "form-group" }, [
+      _c("input", {
+        attrs: {
+          type: "text",
+          name: "USER",
+          value: "",
+          placeholder: "Enter your username *",
+          required: "",
+        },
+      }),
+    ])
+  },
+  function () {
+    var _vm = this;
+    var _h = _vm.$createElement;
+    var _c = _vm._self._c || _h;
+    return _c("div", { staticClass: "submit-btn-container" }, [
+      _c("div", { staticClass: "form-group pull-left" }, [
+        _c(
+          "button",
+          {
+            staticClass: "theme-btn btn-style-three",
+            attrs: { type: "submit", value: "login" },
+          },
+          [_c("span", { staticClass: "txt" }, [_vm._v("Login Now")])]
+        ),
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "form-group  pull-right" }, [
+        _c("a", { staticClass: "sign-help", attrs: { href: "/loginHelp" } }, [
+          _vm._v("Sign in help"),
+        ]),
+      ]),
+    ])
+  },
+];
+__vue_render__$3._withStripped = true;
+
+  /* style */
+  const __vue_inject_styles__$3 = undefined;
+  /* scoped */
+  const __vue_scope_id__$3 = undefined;
+  /* module identifier */
+  const __vue_module_identifier__$3 = undefined;
+  /* functional template */
+  const __vue_is_functional_template__$3 = false;
+  /* style inject */
+  
+  /* style inject SSR */
+  
+  /* style inject shadow dom */
+  
+
+  
+  const __vue_component__$3 = /*#__PURE__*/__vue_normalize__(
+    { render: __vue_render__$3, staticRenderFns: __vue_staticRenderFns__$3 },
+    __vue_inject_styles__$3,
+    __vue_script__$3,
+    __vue_scope_id__$3,
+    __vue_is_functional_template__$3,
+    __vue_module_identifier__$3,
+    false,
+    undefined,
+    undefined,
+    undefined
+  );
+
+//
+    var script$4 = {
+        props: {
+			totalPrice: String,
+			retailTotalPrice: String,
+         currencySymbolRight: String,
+			currencySymbolLeft: String,
+         minusCurrencySymbolLeft: String,
+			productCount: Number,
+         productFreeCount: Number,
+         totalMemberSave: String,
+			isLoggedIn: Boolean,
+			percentSavings: String,
+			percentOffName: String,
+			percentSavingsSecond: String,
+			percentOffNameSecond: String,
+         membership: Number,
+         scriptName: String,
+         coupon: Number,
+         couponAmount: String,
+         enrollerFirst: String,
+         shippingOrderCount: Number,
+         retailOnly:Number
+		},
+        components: {
+                'login-modal': __vue_component__$3,
+                },
+        data: function () {
+                        return {
+                                loginModalOpen: false
+                        }
+                },
+        methods: {
+                        openLoginModal() {
+                           console.log("opening login modal");
+                           this.loginModalOpen =true;
+                           console.log(this.loginModalOpen);
+                        },
+                        closeLoginModal() {
+                           console.log("closing login modal");
+                           this.loginModalOpen= false;
+                        },
+        }
+    };
+
+/* script */
+const __vue_script__$4 = script$4;
+
+/* template */
+var __vue_render__$4 = function () {
+  var _vm = this;
+  var _h = _vm.$createElement;
+  var _c = _vm._self._c || _h;
+  return _c(
+    "div",
+    { staticClass: "item-adres" },
+    [
+      _c("div", { staticClass: "item-adres-br" }, [
+        _c("h3", [_vm._v("Order Summary")]),
+        _vm._v(" "),
+        _c("ul", [
+          _c("li", [
+            _c("strong", [_vm._v("Products")]),
+            _c("span", [_c("var", [_vm._v(_vm._s(_vm.productCount))])]),
+          ]),
+          _vm._v(" "),
+          _vm.percentOffName && _vm.percentSavings > 0
+            ? _c(
+                "li",
+                {
+                  staticClass: "text--blue",
+                  staticStyle: { "font-weight": "bold" },
+                },
+                [
+                  _c(
+                    "strong",
+                    {
+                      staticClass: "memberSavings",
+                      staticStyle: { "font-weight": "bold" },
+                    },
+                    [_vm._v(_vm._s(_vm.percentOffName))]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "span",
+                    {
+                      attrs: {
+                        "data-currency-symbol-right": _vm.currencySymbolRight,
+                        "data-currency-symbol-left":
+                          _vm.minusCurrencySymbolLeft,
+                      },
+                    },
+                    [_c("var", [_vm._v(_vm._s(_vm.percentSavings))])]
+                  ),
+                ]
+              )
+            : _vm._e(),
+          _vm._v(" "),
+          _vm.percentOffNameSecond && _vm.percentSavingsSecond > 0
+            ? _c("li", [
+                _c("strong", [_vm._v(_vm._s(_vm.percentOffNameSecond))]),
+                _vm._v(" "),
+                _c(
+                  "span",
+                  {
+                    attrs: {
+                      "data-currency-symbol-right": _vm.currencySymbolRight,
+                      "data-currency-symbol-left": _vm.currencySymbolLeft,
+                    },
+                  },
+                  [_c("var", [_vm._v("-" + _vm._s(_vm.percentSavingsSecond))])]
+                ),
+              ])
+            : _vm._e(),
+          _vm._v(" "),
+          _vm.couponAmount > 0 && _vm.shippingOrderCount > 0
+            ? _c(
+                "li",
+                {
+                  staticClass: "text--blue",
+                  staticStyle: { "font-weight": "bold" },
+                },
+                [
+                  _c(
+                    "strong",
+                    {
+                      staticClass: "memberSavings",
+                      staticStyle: { "font-weight": "bold" },
+                    },
+                    [
+                      _vm._v("$" + _vm._s(_vm.couponAmount) + " Off from"),
+                      _c("br"),
+                      _vm._v(_vm._s(_vm.enrollerFirst)),
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c("span", [
+                    _vm._v("-"),
+                    _c(
+                      "var",
+                      {
+                        attrs: {
+                          "data-currency-symbol-right": _vm.currencySymbolRight,
+                          "data-currency-symbol-left": _vm.currencySymbolLeft,
+                        },
+                      },
+                      [_vm._v(_vm._s(_vm.couponAmount))]
+                    ),
+                  ]),
+                ]
+              )
+            : _vm._e(),
+          _vm._v(" "),
+          _vm.retailOnly != 1
+            ? _c("li", [
+                _c("strong", [_vm._v("Member Price")]),
+                _vm._v(" "),
+                _c(
+                  "span",
+                  {
+                    attrs: {
+                      "data-currency-symbol-right": _vm.currencySymbolRight,
+                      "data-currency-symbol-left": _vm.currencySymbolLeft,
+                    },
+                  },
+                  [_c("var", [_vm._v(_vm._s(_vm.totalPrice))])]
+                ),
+              ])
+            : _vm._e(),
+          _vm._v(" "),
+          _vm.retailTotalPrice > 0
+            ? _c("li", [
+                _vm.retailOnly != 1
+                  ? _c("strong", [_vm._v("Retail Price")])
+                  : _c("strong", [_vm._v("Price")]),
+                _c(
+                  "span",
+                  {
+                    attrs: {
+                      "data-currency-symbol-right": _vm.currencySymbolRight,
+                      "data-currency-symbol-left": _vm.currencySymbolLeft,
+                    },
+                  },
+                  [
+                    _vm.membership >= 1
+                      ? _c(
+                          "var",
+                          {
+                            staticStyle: { "text-decoration": "line-through" },
+                          },
+                          [_vm._v(_vm._s(_vm.retailTotalPrice))]
+                        )
+                      : _c("var", [_vm._v(_vm._s(_vm.retailTotalPrice))]),
+                  ]
+                ),
+              ])
+            : _vm._e(),
+          _vm._v(" "),
+          _vm.totalMemberSave > 0 && _vm.retailOnly != 1
+            ? _c("li", { staticClass: "text--blue" }, [
+                _c("strong", { staticClass: "memberSavings" }, [
+                  _vm._v("Member Savings"),
+                ]),
+                _c(
+                  "span",
+                  {
+                    attrs: {
+                      "data-currency-symbol-right": _vm.currencySymbolRight,
+                      "data-currency-symbol-left": _vm.currencySymbolLeft,
+                    },
+                  },
+                  [_c("var", [_vm._v(_vm._s(_vm.totalMemberSave))])]
+                ),
+              ])
+            : _vm._e(),
+        ]),
+        _vm._v(" "),
+        _c("ul", [
+          !_vm.isLoggedIn && _vm.totalMemberSave > 0 && !_vm.membership
+            ? _c("li", [
+                _c("div", { staticClass: "shoppingCartLabelText" }, [
+                  _vm._v("Already A Member?"),
+                ]),
+                _c("span", [
+                  _c(
+                    "a",
+                    {
+                      staticClass: "shoppingCartLiButton",
+                      attrs: { href: "#" },
+                      on: {
+                        click: function ($event) {
+                          return _vm.openLoginModal()
+                        },
+                      },
+                    },
+                    [_vm._v("Login To Save")]
+                  ),
+                ]),
+              ])
+            : _vm._e(),
+          _vm._v(" "),
+          _vm.totalMemberSave > 0 && !_vm.membership && _vm.retailOnly != 1
+            ? _c("li", [
+                _c("div", { staticClass: "shoppingCartLabelText" }, [
+                  _vm._v("Join and Save"),
+                ]),
+                _vm._m(0),
+              ])
+            : _vm._e(),
+        ]),
+      ]),
+      _vm._v(" "),
+      _vm.loginModalOpen
+        ? _c("login-modal", {
+            attrs: { scriptName: _vm.scriptName },
+            on: {
+              "modal-closed": function ($event) {
+                return _vm.closeLoginModal()
+              },
+            },
+          })
+        : _vm._e(),
+    ],
+    1
+  )
+};
+var __vue_staticRenderFns__$4 = [
+  function () {
+    var _vm = this;
+    var _h = _vm.$createElement;
+    var _c = _vm._self._c || _h;
+    return _c("span", [
+      _c(
+        "a",
+        { staticClass: "shoppingCartLiButton", attrs: { href: "/membership" } },
+        [_vm._v("Learn More")]
+      ),
+    ])
+  },
+];
+__vue_render__$4._withStripped = true;
+
+  /* style */
+  const __vue_inject_styles__$4 = function (inject) {
+    if (!inject) return
+    inject("data-v-11bcc44d_0", { source: "\n.item-adres span[data-currency-symbol-left], .itembar span[data-currency-symbol-right] {\n\t\tfloat: right !important;\n}\n.cart-summary-notice {\n      font-family: \"Lato\",\"Helvetica Neue\",\"Helvetica\",Helvetica,Arial,sans-serif;\n      color:red;\n      font-size:12px;\n      margin-bottom:10px;\n}\n", map: {"version":3,"sources":["/usr/local/www/lgd/powerline/js/src/elements/shoppingCart/components/ShoppingCartSummary.vue"],"names":[],"mappings":";AAgCA;EACA,uBAAA;AACA;AACA;MACA,2EAAA;MACA,SAAA;MACA,cAAA;MACA,kBAAA;AACA","file":"ShoppingCartSummary.vue","sourcesContent":["<template>\n\t<div class=\"item-adres\">\n\t\t<div class=\"item-adres-br\">\n\t\t    <h3>Order Summary</h3>\n\t\t\t<ul>\n\t\t\t\t<li><strong>Products</strong><span><var>{{ productCount }}</var></span></li>\n\t\t\t\t<li v-if=\"percentOffName && percentSavings > 0 \" class=\"text--blue\" style=\"font-weight:bold\"><strong class=\"memberSavings\" style=\"font-weight:bold\">{{ percentOffName }}</strong> <span :data-currency-symbol-right=\"currencySymbolRight\" :data-currency-symbol-left=\"minusCurrencySymbolLeft\"><var>{{ percentSavings }}</var></span></li>\n\t\t\t\t<li v-if=\"percentOffNameSecond && percentSavingsSecond > 0\"><strong>{{ percentOffNameSecond }}</strong> <span :data-currency-symbol-right=\"currencySymbolRight\" :data-currency-symbol-left=\"currencySymbolLeft\"><var>-{{ percentSavingsSecond }}</var></span></li>\n            <li v-if=\"couponAmount>0 && shippingOrderCount > 0\" class=\"text--blue\" style=\"font-weight:bold\"><strong class=\"memberSavings\" style=\"font-weight:bold\">${{ couponAmount }} Off from<br>{{ enrollerFirst }}</strong> \n             <span>-<var :data-currency-symbol-right=\"currencySymbolRight\" :data-currency-symbol-left=\"currencySymbolLeft\">{{ couponAmount }}</var></span>\n            </li>\n\t\t\t\t<li v-if=\"retailOnly!=1\"><strong>Member Price</strong> <span :data-currency-symbol-right=\"currencySymbolRight\" :data-currency-symbol-left=\"currencySymbolLeft\"><var>{{ totalPrice }}</var></span></li>\n\t\t\t\t<li v-if=\"retailTotalPrice > 0\"><strong v-if=\"retailOnly!=1\">Retail Price</strong><strong v-else>Price</strong><span :data-currency-symbol-right=\"currencySymbolRight\" :data-currency-symbol-left=\"currencySymbolLeft\">\n<var v-if=\"membership>=1\" style=\"text-decoration:line-through\">{{ retailTotalPrice }}</var><var v-else>{{ retailTotalPrice }}</var></span></li>\n            <li v-if=\"totalMemberSave > 0 && retailOnly!=1\" class=\"text--blue\"><strong  class=\"memberSavings\">Member Savings</strong><span :data-currency-symbol-right=\"currencySymbolRight\" :data-currency-symbol-left=\"currencySymbolLeft\"><var>{{ totalMemberSave }}</var></span></li>\n                        </ul>\n                        <ul>\n                         <li v-if=\"!isLoggedIn && totalMemberSave > 0 && !membership\"><div class=\"shoppingCartLabelText\">Already A Member?</div><span><a class=\"shoppingCartLiButton\" @click=\"openLoginModal()\" href=\"#\">Login To Save</a></span></li>\n                         <li v-if=\"totalMemberSave > 0 && !membership && retailOnly!=1\"><div class=\"shoppingCartLabelText\">Join and Save</div><span><a class=\"shoppingCartLiButton\" href=\"/membership\">Learn More</a></span></li>\n\t\t\t</ul>\n\t\t</div>\n         <login-modal\n            :scriptName=\"scriptName\"\n            v-if=\"loginModalOpen\"\n            @modal-closed=\"closeLoginModal()\"\n         >\n         </login-modal>\n\n\t</div>\n</template>\n\n<style>\n\t.item-adres span[data-currency-symbol-left], .itembar span[data-currency-symbol-right] {\n\t\tfloat: right !important;\n\t}\n   .cart-summary-notice {\n      font-family: \"Lato\",\"Helvetica Neue\",\"Helvetica\",Helvetica,Arial,sans-serif;\n      color:red;\n      font-size:12px;\n      margin-bottom:10px; \n   }\n</style>\n\n<script>\n    import LoginModal from './LoginModal.vue'\n    export default {\n        props: {\n\t\t\ttotalPrice: String,\n\t\t\tretailTotalPrice: String,\n         currencySymbolRight: String,\n\t\t\tcurrencySymbolLeft: String,\n         minusCurrencySymbolLeft: String,\n\t\t\tproductCount: Number,\n         productFreeCount: Number,\n         totalMemberSave: String,\n\t\t\tisLoggedIn: Boolean,\n\t\t\tpercentSavings: String,\n\t\t\tpercentOffName: String,\n\t\t\tpercentSavingsSecond: String,\n\t\t\tpercentOffNameSecond: String,\n         membership: Number,\n         scriptName: String,\n         coupon: Number,\n         couponAmount: String,\n         enrollerFirst: String,\n         shippingOrderCount: Number,\n         retailOnly:Number\n\t\t},\n        components: {\n                'login-modal': LoginModal,\n                },\n        data: function () {\n                        return {\n                                loginModalOpen: false\n                        }\n                },\n        methods: {\n                        openLoginModal() {\n                           console.log(\"opening login modal\")\n                           this.loginModalOpen =true\n                           console.log(this.loginModalOpen)\n                        },\n                        closeLoginModal() {\n                           console.log(\"closing login modal\")\n                           this.loginModalOpen= false\n                        },\n        }\n    }\n\n</script>\n\n<style>\n</style>\n"]}, media: undefined })
+,inject("data-v-11bcc44d_1", { source: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", map: {"version":3,"sources":[],"names":[],"mappings":"","file":"ShoppingCartSummary.vue"}, media: undefined });
+
+  };
+  /* scoped */
+  const __vue_scope_id__$4 = undefined;
+  /* module identifier */
+  const __vue_module_identifier__$4 = undefined;
+  /* functional template */
+  const __vue_is_functional_template__$4 = false;
+  /* style inject SSR */
+  
+  /* style inject shadow dom */
+  
+
+  
+  const __vue_component__$4 = /*#__PURE__*/__vue_normalize__(
+    { render: __vue_render__$4, staticRenderFns: __vue_staticRenderFns__$4 },
+    __vue_inject_styles__$4,
+    __vue_script__$4,
+    __vue_scope_id__$4,
+    __vue_is_functional_template__$4,
+    __vue_module_identifier__$4,
+    false,
+    __vue_create_injector__,
+    undefined,
+    undefined
+  );
+
+var currencySymbols = {
+	left: {
+		US: "$"
+	},
+	right: {
+	}
+};
+var euHempCountries = {
+};
+
+var countries = {
+	AD: "Andorra",
+	AE: "United Arab Emirates",
+	AF: "Afghanistan",
+	AG: "Antigua and Barbuda",
+	AI: "Anguilla",
+	AL: "Albania",
+	AM: "Armenia",
+	AN: "Netherlands Antilles",
+	AO: "Angola",
+	AQ: "Antarctica",
+	AR: "Argentina",
+	AS: "American Samoa",
+	AT: "Austria",
+	AU: "Australia",
+	AW: "Aruba",
+	AZ: "Azerbaijan",
+	BA: "Bosnia And Herzegowina",
+	BB: "Barbados",
+	BD: "Bangladesh",
+	BE: "Belgium",
+	BF: "Burkina Faso",
+	BG: "Bulgaria",
+	BH: "Bahrain",
+	BI: "Burundi",
+	BJ: "Benin",
+	BM: "Bermuda",
+	BN: "Brunei Darussalam",
+	BO: "Bolivia",
+	BR: "Brazil",
+	BS: "Bahamas",
+	BT: "Bhutan",
+	BV: "Bouvet Island",
+	BW: "Botswana",
+	BY: "Belarus",
+	BZ: "Belize",
+	CA: "Canada",
+	CC: "Cocos Islands",
+	CD: "Congo, Democratic Republic",
+	CF: "Central African Republic",
+	CG: "Congo",
+	CH: "Switzerland",
+	CI: "Cote d'ivoire",
+	CK: "Cook Islands",
+	CL: "Chile",
+	CM: "Cameroon",
+	CN: "China",
+	CO: "Colombia",
+	CR: "Costa Rica",
+	CV: "Cape Verde",
+	CW: "Curacao",
+	CX: "Christmas Island",
+	CY: "Cyprus",
+	CZ: "Czech Republic",
+	DE: "Germany",
+	DJ: "Djibouti",
+	DK: "Denmark",
+	DM: "Dominica",
+	DO: "Dominican Republic",
+	DZ: "Algeria",
+	EC: "Ecuador",
+	EE: "Estonia",
+	EG: "Egypt",
+	EH: "Western Sahara",
+	ER: "Eritrea",
+	ES: "Spain",
+	ET: "Ethiopia",
+	FI: "Finland",
+	FJ: "Fiji",
+	FK: "Falkland Islands",
+	FM: "Micronesia",
+	FO: "Faroe Islands",
+	FR: "France",
+	GA: "Gabon",
+	GB: "United Kingdom",
+	GD: "Grenada",
+	GE: "Georgia",
+	GF: "French Guiana",
+	GG: "Guernsey",
+	GH: "Ghana",
+	GI: "Gibraltar",
+	GL: "Greenland",
+	GM: "Gambia",
+	GN: "Guinea",
+	GP: "Guadeloupe",
+	GQ: "Equatorial Guinea",
+	GR: "Greece",
+	GS: "South Georgia",
+	GT: "Guatemala",
+	GU: "Guam",
+	GW: "Guinea-bissau",
+	GY: "Guyana",
+	HK: "Hong Kong",
+	HN: "Honduras",
+	HR: "Croatia",
+	HT: "Haiti",
+	HU: "Hungary",
+	IC: "Canary Islands",
+	ID: "Indonesia",
+	IE: "Ireland",
+	IL: "Israel",
+	IM: "Isle of Man",
+	IN: "India",
+	IS: "Iceland",
+	IT: "Italy",
+	JE: "Jersey",
+	JM: "Jamaica",
+	JO: "Jordan",
+	JP: "Japan",
+	KE: "Kenya",
+	KG: "Kyrgyzstan",
+	KH: "Cambodia",
+	KI: "Kiribati",
+	KM: "Comoros",
+	KN: "Saint Kitts And Nevis",
+	KR: "South Korea",
+	KW: "Kuwait",
+	KY: "Cayman Islands",
+	KZ: "Kazakhstan",
+	LA: "Laos",
+	LB: "Lebanon",
+	LC: "Saint Lucia",
+	LI: "Liechtenstein",
+	LK: "Sri Lanka",
+	LR: "Liberia",
+	LS: "Lesotho",
+	LT: "Lithuania",
+	LU: "Luxembourg",
+	LV: "Latvia",
+	MA: "Morocco",
+	MC: "Monaco",
+	MD: "Moldova",
+	ME: "Montenegro",
+	MF: "St. Martin",
+	MG: "Madagascar",
+	MK: "Macedonia",
+	ML: "Mali",
+	MM: "Myanmar",
+	MN: "Mongolia",
+	MO: "Macau",
+	MP: "Northern Mariana Islands",
+	MQ: "Martinique",
+	MR: "Mauritania",
+	MS: "Montserrat",
+	MT: "Malta",
+	MU: "Mauritius",
+	MV: "Maldives",
+	MW: "Malawi",
+	MX: "Mexico",
+	MY: "Malaysia",
+	MZ: "Mozambique",
+	NA: "Namibia",
+	NC: "New Caledonia",
+	NE: "Niger",
+	NF: "Norfolk Island",
+	NG: "Nigeria",
+	NI: "Nicaragua",
+	NL: "Netherlands",
+	NO: "Norway",
+	NP: "Nepal",
+	NR: "Nauru",
+	NU: "Niue",
+	NZ: "New Zealand",
+	OM: "Oman",
+	PA: "Panama",
+	PE: "Peru",
+	PF: "French Polynesia",
+	PG: "Papua New Guinea",
+	PH: "Philippines",
+	PK: "Pakistan",
+	PL: "Poland",
+	PM: "St. Pierre And Miquelon",
+	PN: "Pitcairn",
+	PR: "Puerto Rico",
+	PT: "Portugal",
+	PW: "Palau",
+	PY: "Paraguay",
+	QA: "Qatar",
+	RE: "Reunion",
+	RO: "Romania",
+	RS: "Serbia",
+	RU: "Russian Federation",
+	RW: "Rwanda",
+	SA: "Saudi Arabia",
+	SB: "Solomon Islands",
+	SC: "Seychelles",
+	SD: "Sudan",
+	SE: "Sweden",
+	SG: "Singapore",
+	SH: "St. Helena",
+	SI: "Slovenia",
+	SK: "Slovakia",
+	SL: "Sierra Leone",
+	SM: "San Marino",
+	SN: "Senegal",
+	SO: "Somalia",
+	SR: "Suriname",
+	SV: "El Salvador",
+	SZ: "Swaziland",
+	TC: "Turks And Caicos Islands",
+	TD: "Chad",
+	TG: "Togo",
+	TH: "Thailand",
+	TJ: "Tajikistan",
+	TK: "Tokelau",
+	TL: "Timor-Leste",
+	TM: "Turkmenistan",
+	TN: "Tunisia",
+	TO: "Tonga",
+	TR: "Turkey",
+	TT: "Trinidad And Tobago",
+	TV: "Tuvalu",
+	TW: "Taiwan",
+	TZ: "Tanzania",
+	UA: "Ukraine",
+	UG: "Uganda",
+	US: "United States",
+	UY: "Uruguay",
+	UZ: "Uzbekistan",
+	VC: "St. Vincent and the Grenadines",
+	VE: "Venezuela",
+	VG: "Virgin Islands, British",
+	VI: "Virgin Islands",
+	VN: "Viet Nam",
+	VU: "Vanuatu",
+	WS: "Samoa",
+	YE: "Yemen",
+	YT: "Mayotte",
+	ZA: "South Africa",
+	ZM: "Zambia",
+	ZW: "Zimbabwe"
+};
+
+var script$5 = {
+    props: {
+        productDataJson: String,
+        hasEnroller: Boolean,
+        isLoggedIn: Boolean,
+        isPreenrollee: Boolean,
+        scriptName: String,
+        openCartInitially: Boolean,
+        coupon: Number,
+        enrollerFirst: String,
+        retailOnly: Number
+        /* products: Array */
+    },
+    components: {
+        'shopping-cart-item': __vue_component__$1,
+        'shopping-cart-notification': __vue_component__$2,
+        'shopping-cart-summary': __vue_component__$4,
+    },
+    watch: {
+        countryCode: function (newCountry, oldCountry) {
+            if (newCountry && oldCountry) {
+                this.countryChangeReload();
+            }
+        },
+        isOpen: function (isOpen) {
+            if (isOpen) {
+                jQuery("#myModal2").modal('show');
+            }
+            else {
+                jQuery("#myModal2").modal('hide');
+            }
+        }
+    },
+    data: function () {
+        return {
+            isOpen: false,
+            bvModalIsOpen: false,
+            items: [],
+            products: [],
+            notifications: [],
+            totalPrice: '0',
+            retailTotalPrice: '0',
+            totalBV: 0,
+            countryCode: '',
+            percentSavings: 0,
+            percentOffName: '',
+            percentSavingsSecond: 0,
+            percentOffNameSecond: '',
+            countries: countries,
+            totalMemberSave: '0',
+            membership: 0,
+            couponAmount: 0,
+            shippingOrderCount: 0
+        };
+    },
+    methods: {
+        countryChangeReload: function () {
+            shoppingCart.update({ country: this.countryCode }).then(function () {
+                location.reload();
+            });
+        },
+        isSpecialPackSubProduct: function (id) {
+            return /\d+_\d+/.test(id);
+        },
+        mapItemsToProductMeta: function () {
+            var _this = this;
+            var vm = this;
+            var products = [];
+            var freeCounts = new Map();
+            this.items.forEach(function (item) {
+                if (item.free) {
+                    var productId = item.productId.replace("FREE_", "");
+                    freeCounts[productId] = item.quantity;
+                    item.productId = productId;
+                }
+            });
+            this.items.forEach(function (item) {
+                if (_this.isSpecialPackSubProduct(item.productId)) {
+                    item = __assign(__assign({}, item), { isSpecialPackSubProduct: true, productId: String(item.productId).match(/\d+_(?<subpid>\d+)/).groups.subpid });
+                }
+                if (vm.productData[item.productId]) {
+                    var product = {
+                        'id': item.productId,
+                        'name': vm.productData[item.productId].name,
+                        'price': vm.productData[item.productId].price,
+                        'bv': vm.productData[item.productId].bv,
+                        'quantity': item.quantity,
+                        'free': item.free,
+                        'freeCount': freeCounts[item.productId],
+                        'image': vm.productData[item.productId].image,
+                        'max': parseInt(vm.productData[item.productId].max, 10),
+                        'product_months': vm.productData[item.productId].product_months,
+                        'monthly_bv': vm.productData[item.productId].monthly_bv,
+                        'sale': vm.productData[item.productId].sale,
+                        'saleMessage': vm.productData[item.productId].saleMessage,
+                        'salePrice': vm.productData[item.productId].salePrice,
+                        'isSpecialPackMainProduct': vm.productData[item.productId].isSpecialPackMainProduct,
+                        'isSpecialPackSubProduct': item.isSpecialPackSubProduct,
+                        'allowAutoship': (_this.isLoggedIn && !_this.isPreenrollee) && vm.productData[item.productId].allowAutoship,
+                        'autoship': item.autoship
+                    };
+                    if (vm.productData[item.productId].flavor) {
+                        product['flavor'] = vm.productData[item.productId].flavor;
+                    }
+                    if (vm.productData[item.productId].size) {
+                        product['size'] = vm.productData[item.productId].size;
+                    }
+                    if (vm.productData[item.productId].promoCartMessage) {
+                        product['promoCartMessage'] = vm.productData[item.productId].promoCartMessage;
+                    }
+                    if (vm.productData[item.productId].promoCartMessageLine2) {
+                        product['promoCartMessageLine2'] = vm.productData[item.productId].promoCartMessageLine2;
+                    }
+                    products.push(product);
+                }
+            });
+            this.items
+                .map(function (p) { var _a; return (_a = String(p.productId).match(/(?<main>\d+)_(?<sub>\d+)/)) === null || _a === void 0 ? void 0 : _a.groups; })
+                .filter(function (p) { return p; })
+                .map(function (m) { return (__assign(__assign({}, m), { sub: products.find(function (_a) {
+                    var id = _a.id;
+                    return id == m.sub;
+                }) })); })
+                .forEach(function (_a) {
+                var main = _a.main, sub = _a.sub;
+                var p = products.find(function (_a) {
+                    var id = _a.id;
+                    return id == main;
+                });
+                p.specialPackSubProducts = p.specialPackSubProducts
+                    ? p.specialPackSubProducts.concat(sub)
+                    : [sub];
+            });
+            this.products = products;
+        },
+        closeCart: function (e) {
+            this.updateShoppingCartCount();
+            this.isOpen = false;
+        },
+        getProducts: function () {
+            return __awaiter(this, void 0, void 0, function () {
+                var vm;
+                return __generator(this, function (_a) {
+                    switch (_a.label) {
+                        case 0:
+                            vm = this;
+                            return [4 /*yield*/, shoppingCart.get().then(function (data) {
+                                    vm.items = data.shoppingCartDetails || [];
+                                    vm.mapItemsToProductMeta();
+                                    vm.notifications = data.notifications || [];
+                                    vm.totalPrice = Number(data.amount || 0).toFixed(2);
+                                    vm.retailTotalPrice = Number(data.retailAmount || 0).toFixed(2);
+                                    vm.totalBV = data.bv || 0;
+                                    vm.countryCode = data.country;
+                                    vm.percentSavings = Number(data.percentSavings).toFixed(2);
+                                    vm.percentOffName = data.percentOffName;
+                                    vm.percentSavingsSecond = Number(data.percentSavingsSecond).toFixed(2);
+                                    vm.percentOffNameSecond = data.percentOffNameSecond;
+                                    vm.couponAmount = Number(data.couponAmount || 0).toFixed(2);
+                                    vm.shippingOrderCount = Number(data.shippingOrderCount || 0);
+                                    if (vm.couponAmount > 0 && vm.shippingOrderCount > 0 && data.amount > 0) {
+                                        vm.totalPrice = Number(data.amount - vm.couponAmount || 0).toFixed(2);
+                                        vm.retailTotalPrice = Number(data.retailAmount - vm.couponAmount || 0).toFixed(2);
+                                    }
+                                    vm.totalMemberSave = Number(data.totalMemberSave || 0).toFixed(2);
+                                    vm.membership = data.membership || 0;
+                                })];
+                        case 1:
+                            _a.sent();
+                            return [2 /*return*/];
+                    }
+                });
+            });
+        },
+        changeProduct: function (_a) {
+            var productID = _a.id, quantity = _a.quantity, autoship = _a.autoship, isSpecialPackMainProduct = _a.isSpecialPackMainProduct, specialPackSubProducts = _a.specialPackSubProducts;
+            var vm = this;
+            Promise.all([productID].concat(isSpecialPackMainProduct
+                ? specialPackSubProducts
+                    .map(function (_a) {
+                    var id = _a.id;
+                    return productID + "_" + id;
+                })
+                : [])
+                .map(function (id) { return shoppingCart
+                .setProduct(id, { quantity: quantity, autoship: autoship }); }))
+                .then(shoppingCart.get)
+                .then(function (data) {
+                vm.items = data.shoppingCartDetails || [];
+                vm.mapItemsToProductMeta();
+                vm.notifications = data.notifications || [];
+                vm.totalPrice = Number(data.amount || 0).toFixed(2);
+                vm.retailTotalPrice = Number(data.retailAmount || 0).toFixed(2);
+                vm.totalBV = data.bv || 0;
+                vm.percentSavings = Number(data.percentSavings).toFixed(2);
+                vm.percentOffName = data.percentOffName;
+                vm.percentSavingsSecond = Number(data.percentSavingsSecond).toFixed(2);
+                vm.percentOffNameSecond = data.percentOffNameSecond;
+                vm.couponAmount = Number(data.couponAmount || 0).toFixed(2);
+                vm.shippingOrderCount = Number(data.shippingOrderCount || 0);
+                if (vm.couponAmount > 0 && vm.shippingOrderCount > 0 && data.amount > 0) {
+                    vm.totalPrice = Number(data.amount - vm.couponAmount || 0).toFixed(2);
+                    vm.retailTotalPrice = Number(data.retailAmount - vm.couponAmount || 0).toFixed(2);
+                }
+                vm.totalMemberSave = Number(data.totalMemberSave || 0).toFixed(2);
+                vm.membership = data.membership || 0;
+                vm.tax = Number(data.tax || 0).toFixed(2);
+            });
+        },
+        // deleteProduct: function ({id: productID, quantity}) {
+        // 	let vm = this;
+        // 	shoppingCart.deleteFromCart(productID, quantity).then(
+        //         function (data) {
+        // 			vm.items = data.shoppingCartDetails || [];
+        // 			vm.mapItemsToProductMeta();
+        // 			vm.notifications = data.notifications || [];
+        // 			vm.totalPrice = Number(data.amount || 0).toFixed(2);
+        // 			vm.retailTotalPrice = Number(data.retailAmount || 0).toFixed(2);
+        // 			vm.totalBV = data.bv || 0;
+        // 		}
+        //     );
+        // },
+        // emptyCart: function () {
+        // 	let vm = this;
+        // 	shoppingCart.clearCart().then(
+        //         function (data) {
+        // 			vm.items = data.shoppingCartDetails || [];
+        // 			vm.mapItemsToProductMeta();
+        // 			vm.notifications = data.notifications || [];
+        // 			vm.amount = Number(data.amount || 0).toFixed(2);
+        // 			vm.totalBV = data.bv || 0;
+        // 		}
+        //     );
+        // },
+        openCountryPopup: function () {
+            this.closeCart();
+            document.getElementById("country-selector-popup").style.display = "flex";
+        },
+        openBVModal: function () {
+            this.bvModalIsOpen = true;
+        },
+        closeBVModal: function () {
+            this.bvModalIsOpen = false;
+        },
+        updateShoppingCartCount: function () {
+            var openCart = document.getElementById('openCart'), openCartMobile = document.getElementById('openCartMobile'), className = 'shopping-cart-item-count', itemCount = 0;
+            itemCount = this.productCount;
+            console.log("updating product Counts", this.productCount);
+            if (itemCount > 0) {
+                if (openCart.getElementsByClassName(className).length == 0) {
+                    var cartCountSpan = document.createElement('span');
+                    cartCountSpan.className = className;
+                    cartCountSpan.textContent = itemCount;
+                    openCart.appendChild(cartCountSpan);
+                }
+                else {
+                    openCart.getElementsByClassName(className)[0].innerHTML = itemCount;
+                }
+                if (openCartMobile.getElementsByClassName(className).length == 0) {
+                    var cartCountSpan = document.createElement('span');
+                    cartCountSpan.className = className;
+                    cartCountSpan.textContent = itemCount;
+                    openCartMobile.appendChild(cartCountSpan);
+                }
+                else {
+                    openCartMobile.getElementsByClassName(className)[0].innerHTML = itemCount;
+                }
+            }
+            else {
+                if (openCart.getElementsByClassName(className).length > 0) {
+                    var cartCountSpan = openCart.getElementsByClassName(className)[0];
+                    cartCountSpan.parentNode.removeChild(cartCountSpan);
+                }
+                if (openCartMobile.getElementsByClassName(className).length > 0) {
+                    var cartCountSpan = openCartMobile.getElementsByClassName(className)[0];
+                    cartCountSpan.parentNode.removeChild(cartCountSpan);
+                }
+            }
+        },
+    },
+    created: function () {
+        // eventBus.$on('itemDeleted', product => {
+        // 	this.deleteProduct(product.id, product.quantity);
+        // });
+        // eventBus.$on('increaseQuantity', product => {
+        // 	this.setProductQuantity(product.id, product.quantity);
+        // });
+        // eventBus.$on('decreaseQuantity', product => {
+        // 	this.setProductQuantity(product.id, product.quantity);
+        // });
+        // eventBus.$on('changeQuantity', product => {
+        // 	this.setProductQuantity(product.id, product.quantity);
+        // });
+    },
+    computed: {
+        visibleProducts: function () {
+            return this.products
+                .filter(function (p) { return !p.isSpecialPackSubProduct; });
+        },
+        sortedCountries: function () {
+            var c = Object.entries(this.countries).filter(function (_a) {
+                var code = _a[0];
+                return code != 'US';
+            });
+            c.sort(function (_a, _b) {
+                var c1 = _a[0], n1 = _a[1];
+                var c2 = _b[0], n2 = _b[1];
+                if (n1 > n2) {
+                    return 1;
+                }
+                else if (n1 == n2) {
+                    return 0;
+                }
+                else {
+                    return -1;
+                }
+            });
+            return ['US'].concat(c.map(function (_a) {
+                var code = _a[0];
+                return code;
+            }));
+        },
+        country: function () {
+            return this.countries[this.countryCode] || 'No country selected';
+        },
+        productData: function () {
+            return JSON.parse(this.productDataJson);
+        },
+        productsLink: function () {
+            return "/products";
+        },
+        styles: function () {
+            if (this.isOpen) {
+                return 'right: 0;';
+            }
+            else {
+                return 'right: -120%;';
+            }
+        },
+        bvModalStyles: function () {
+            if (this.bvModalIsOpen) {
+                return 'display: none;';
+            }
+            else {
+                return 'display: block;';
+            }
+        },
+        currencySymbolLeft: function () {
+            if (!euHempCountries[this.countryCode] && !currencySymbols.left[this.countryCode] && !currencySymbols.right[this.countryCode]) {
+                return currencySymbols.left.US;
+            }
+            else {
+                return currencySymbols.left[this.countryCode];
+            }
+        },
+        minusCurrencySymbolLeft: function () {
+            if (!euHempCountries[this.countryCode] && !currencySymbols.left[this.countryCode] && !currencySymbols.right[this.countryCode]) {
+                return "-" + currencySymbols.left.US;
+            }
+            else {
+                return "-" + currencySymbols.left[this.countryCode];
+            }
+        },
+        currencySymbolRight: function () {
+            if (euHempCountries[this.countryCode] && this.countryCode != 'GB') {
+                return currencySymbols.right.EU;
+            }
+            else {
+                return currencySymbols.right[this.countryCode];
+            }
+        },
+        productCount: function () {
+            return this.products
+                .filter(function (_a) {
+                var free = _a.free;
+                return !free;
+            })
+                .filter(function (_a) {
+                var c = _a.isSpecialPackSubProduct;
+                return !c;
+            })
+                .reduce(function (a, _a) {
+                var quantity = _a.quantity;
+                return a + Number(quantity);
+            }, 0);
+        },
+        productFreeCount: function () {
+            return this.products
+                .filter(function (_a) {
+                var c = _a.isSpecialPackSubProduct;
+                return !c;
+            })
+                .filter(function (_a) {
+                var free = _a.free;
+                return free;
+            })
+                .reduce(function (a, _a) {
+                var quantity = _a.quantity;
+                return a + Number(quantity);
+            }, 0);
+        }
+        // totalPrice: function () {
+        //     return this.products.reduce((sum, i) => sum + i.quantity * i.price, 0)
+        // },
+        // totalBV: function () {
+        //     return this.products.reduce((sum, i) => sum + i.quantity * i.bv, 0)
+        // }
+    },
+    mounted: function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var openCartBtn, openCartBtnMobile, vm;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getProducts()];
+                    case 1:
+                        _a.sent();
+                        this.updateShoppingCartCount();
+                        openCartBtn = document.getElementById('openCart'), openCartBtnMobile = document.getElementById('openCartMobile');
+                        vm = this;
+                        openCartBtn.addEventListener("click", function () {
+                            vm.isOpen = true;
+                            vm.getProducts();
+                        });
+                        openCartBtnMobile.addEventListener("click", function () {
+                            vm.isOpen = true;
+                            vm.getProducts();
+                        });
+                        console.log("in created", this.openCartInitially);
+                        if (this.openCartInitially && !this.isOpen) {
+                            document.getElementById("openCart").click();
+                            console.log("cart should be opening");
+                        }
+                        return [2 /*return*/];
+                }
+            });
+        });
+    }
+};
+
+/* script */
+const __vue_script__$5 = script$5;
+
+/* template */
+var __vue_render__$5 = function () {
+  var this$1 = this;
+  var _vm = this;
+  var _h = _vm.$createElement;
+  var _c = _vm._self._c || _h;
+  return _c(
+    "div",
+    {
+      staticClass: "modal right fade",
+      staticStyle: { "z-index": "9999999" },
+      attrs: {
+        id: "myModal2",
+        tabindex: "-1",
+        role: "dialog",
+        "aria-labelledby": "myModalLabel2",
+      },
+      on: {
+        click: function ($event) {
+          if ($event.target !== $event.currentTarget) {
+            return null
+          }
+          return _vm.closeCart.apply(null, arguments)
+        },
+      },
+    },
+    [
+      _c("div", { staticClass: "modal-dialog", attrs: { role: "document" } }, [
+        _c("div", { staticClass: "modal-content flex-column" }, [
+          _c("div", { staticClass: "modal-header" }, [
+            _c(
+              "button",
+              {
+                staticClass: "close",
+                attrs: { type: "button", "aria-label": "Close" },
+                on: { click: _vm.closeCart },
+              },
+              [_vm._m(0)]
+            ),
+          ]),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "modal-body flex-column fill" },
+            [
+              _c("div", { staticClass: "top0" }, [_vm._v("Your Cart")]),
+              _vm._v(" "),
+              !_vm.isLoggedIn || _vm.isPreenrollee
+                ? _c(
+                    "div",
+                    {
+                      staticClass: "shiping",
+                      staticStyle: { display: "none" },
+                    },
+                    [
+                      _c("label", [_vm._v("My Country")]),
+                      _vm._v(" "),
+                      _c(
+                        "select",
+                        {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.countryCode,
+                              expression: "countryCode",
+                            },
+                          ],
+                          on: {
+                            change: function ($event) {
+                              var $$selectedVal = Array.prototype.filter
+                                .call($event.target.options, function (o) {
+                                  return o.selected
+                                })
+                                .map(function (o) {
+                                  var val = "_value" in o ? o._value : o.value;
+                                  return val
+                                });
+                              _vm.countryCode = $event.target.multiple
+                                ? $$selectedVal
+                                : $$selectedVal[0];
+                            },
+                          },
+                        },
+                        [
+                          _c(
+                            "option",
+                            {
+                              attrs: { disabled: "" },
+                              domProps: { selected: !_vm.countryCode },
+                            },
+                            [_vm._v("Select Country")]
+                          ),
+                          _vm._v(" "),
+                          _vm._l(_vm.sortedCountries, function (code) {
+                            return _c(
+                              "option",
+                              {
+                                key: code,
+                                domProps: {
+                                  value: code,
+                                  selected: code == _vm.countryCode,
+                                },
+                              },
+                              [_vm._v(_vm._s(_vm.countries[code]))]
+                            )
+                          }),
+                        ],
+                        2
+                      ),
+                    ]
+                  )
+                : _vm._e(),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "fill" },
+                [
+                  _vm.items.length
+                    ? _c(
+                        "div",
+                        { staticClass: "item-cart" },
+                        [
+                          _c("label", [_vm._v("My Products")]),
+                          _vm._v(" "),
+                          _vm._l(_vm.visibleProducts, function (product) {
+                            return _c("shopping-cart-item", {
+                              key:
+                                product.id +
+                                "_" +
+                                product.quantity +
+                                "_" +
+                                product.free,
+                              attrs: {
+                                "currency-symbol-right":
+                                  _vm.currencySymbolRight,
+                                "currency-symbol-left": _vm.currencySymbolLeft,
+                                product: product,
+                              },
+                              on: { changeProduct: _vm.changeProduct },
+                            })
+                          }),
+                        ],
+                        2
+                      )
+                    : _vm._e(),
+                  _vm._v(" "),
+                  _vm._l(_vm.notifications, function (notification, index) {
+                    return _c("shopping-cart-notification", {
+                      key: index,
+                      attrs: { notification: notification },
+                    })
+                  }),
+                ],
+                2
+              ),
+              _vm._v(" "),
+              _vm.products.length > 0
+                ? _c("shopping-cart-summary", {
+                    attrs: {
+                      "currency-symbol-right": _vm.currencySymbolRight,
+                      "currency-symbol-left": _vm.currencySymbolLeft,
+                      "minus-currency-symbol-left": _vm.minusCurrencySymbolLeft,
+                      productCount: _vm.productCount,
+                      productFreeCount: _vm.productFreeCount,
+                      totalPrice: _vm.totalPrice,
+                      retailTotalPrice: _vm.retailTotalPrice,
+                      percentOffName: _vm.percentOffName,
+                      percentSavings: _vm.percentSavings,
+                      percentOffNameSecond: _vm.percentOffNameSecond,
+                      percentSavingsSecond: _vm.percentSavingsSecond,
+                      isLoggedIn: _vm.isLoggedIn,
+                      totalMemberSave: _vm.totalMemberSave,
+                      membership: _vm.membership,
+                      scriptName: _vm.scriptName,
+                      couponAmount: _vm.couponAmount,
+                      enrollerFirst: _vm.enrollerFirst,
+                      shippingOrderCount: _vm.shippingOrderCount,
+                      retailOnly: _vm.retailOnly,
+                    },
+                  })
+                : _vm._e(),
+              _vm._v(" "),
+              _c("div", { staticClass: "item-butn" }, [
+                _c("ul", [
+                  _vm.hasEnroller
+                    ? _c("li", [
+                        _c(
+                          "a",
+                          {
+                            attrs: {
+                              onclick: "openReferrerConfirm()",
+                              "data-dismiss": "modal",
+                              "data-toggle": "modal",
+                              "data-target": "#myModal",
+                              href: "#",
+                            },
+                          },
+                          [_vm._v("CHECKOUT")]
+                        ),
+                      ])
+                    : _c("li", [
+                        _c(
+                          "a",
+                          {
+                            attrs: {
+                              onclick: "openReferrerName()",
+                              "data-dismiss": "modal",
+                              "data-toggle": "modal",
+                              "data-target": "#myModal",
+                              href: "#",
+                            },
+                          },
+                          [_vm._v("CHECKOUT")]
+                        ),
+                      ]),
+                  _vm._v(" "),
+                  _c("li", [
+                    _c(
+                      "a",
+                      {
+                        attrs: { href: "#" },
+                        on: {
+                          click: function (e) {
+                            return e.preventDefault() || this$1.closeCart()
+                          },
+                        },
+                      },
+                      [_vm._v("CONTINUE SHOPPING")]
+                    ),
+                  ]),
+                ]),
+              ]),
+            ],
+            1
+          ),
+        ]),
+      ]),
+    ]
+  )
+};
+var __vue_staticRenderFns__$5 = [
+  function () {
+    var _vm = this;
+    var _h = _vm.$createElement;
+    var _c = _vm._self._c || _h;
+    return _c("span", { attrs: { "aria-hidden": "true" } }, [
+      _c("small", [_vm._v("Close")]),
+      _vm._v(" ×"),
+    ])
+  },
+];
+__vue_render__$5._withStripped = true;
+
+  /* style */
+  const __vue_inject_styles__$5 = function (inject) {
+    if (!inject) return
+    inject("data-v-16302fc6_0", { source: "\n.active {\n\tcolor: red;\n\tright: 0;\n}\n.flex-column {\n\tdisplay: flex;\n\tflex-direction: column;\n}\n.space-between {\n\tjustify-content: space-between;\n}\n.parent-height {\n\tmax-height: 100%;\n}\n.fill {\n\tflex: 1;\n}\n", map: {"version":3,"sources":["/usr/local/www/lgd/powerline/js/src/elements/shoppingCart/components/ShoppingCart.vue"],"names":[],"mappings":";AA6fA;CACA,UAAA;CACA,QAAA;AACA;AACA;CACA,aAAA;CACA,sBAAA;AACA;AACA;CACA,8BAAA;AACA;AACA;CACA,gBAAA;AACA;AACA;CACA,OAAA;AACA","file":"ShoppingCart.vue","sourcesContent":["m<template>\n\t<div class=\"modal right fade\" id=\"myModal2\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myModalLabel2\" @click.self=\"closeCart\" style=\"z-index:9999999\">\n\t\t<div class=\"modal-dialog\" role=\"document\">\n\t\t\t<div class=\"modal-content flex-column\"> \n\t\t\t\t<div class=\"modal-header\">\n\t\t\t\t\t<button type=\"button\" class=\"close\" aria-label=\"Close\" @click=\"closeCart\"><span aria-hidden=\"true\"><small>Close</small> &times;</span></button>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"modal-body flex-column fill\">\n\t\t\t\t\t<div class=\"top0\">Your Cart</div>\n\t\t\t\t\t<div v-if=\"!isLoggedIn || isPreenrollee\" class=\"shiping\" style=\"display:none\">\n\t\t\t\t\t\t<label>My Country</label>\n\t\t\t\t\t\t<select v-model=\"countryCode\">\n\t\t\t\t\t\t\t<option :selected=\"!countryCode\" disabled>Select Country</option>\n\t\t\t\t\t\t\t<option v-for=\"code in sortedCountries\" :key=\"code\" :value=\"code\" :selected=\"code == countryCode\">{{ countries[code] }}</option>\n\t\t\t\t\t\t</select>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"fill\">\n\t\t\t\t\t\t<div v-if=\"items.length\" class=\"item-cart\">\n\t\t\t\t\t\t\t<label>My Products</label>\n\t\t\t\t\t\t\t<shopping-cart-item\n\t\t\t\t\t\t\t\tv-for=\"product in visibleProducts\" \n\t\t\t\t\t\t\t\t:currency-symbol-right=\"currencySymbolRight\" \n\t\t\t\t\t\t\t\t:currency-symbol-left=\"currencySymbolLeft\" \n\t\t\t\t\t\t\t\t:key=\"product.id + '_' + product.quantity + '_' + product.free\"\n\t\t\t\t\t\t\t\t:product=\"product\"\n\t\t\t\t\t\t\t\t@changeProduct=\"changeProduct\"\n\t\t\t\t\t\t\t></shopping-cart-item>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<shopping-cart-notification\n\t\t\t\t\t\t\tv-for=\"(notification, index) in notifications\" :key=\"index\"\n\t\t\t\t\t\t\t:notification=\"notification\">\n\t\t\t\t\t\t</shopping-cart-notification>\n\t\t\t\t\t</div>\n\t\t\t\t\t<!-- <div class=\"item-adres\">\n\t\t\t\t\t\t<div class=\"item-adres-br\">\n\t\t\t\t\t\t<h3>My Summary</h3>\n\t\t\t\t\t\t<ul>\n\t\t\t\t\t\t\t<li><strong>ITEMS</strong>  <span>{{ productCount }}</span></li>\n\t\t\t\t\t\t\t<li><strong>BUSINESS VOLUME\n\t\t\t\t\t\t\t\tMEMBER PRICE </strong><span>{{ totalBV }}</span>\n\t\t\t\t\t\t\t</li>\n\t\t\t\t\t\t\t<li><label>Special Member Pricing</label> <span><b :data-currency-symbol-right=\"currencySymbolRight\" :data-currency-symbol-left=\"currencySymbolLeft\">{{ totalPrice }}</b></span></li>\n\t\t\t\t\t\t\t<li><label>Ordering Regularly as Needed</label><span class=\"rss\">Retail Price <span :data-currency-symbol-right=\"currencySymbolRight\" :data-currency-symbol-left=\"currencySymbolLeft\">{{ retailTotalPrice }}</span></span></li>\n\t\t\t\t\t\t\t<li><label>Refer 3 for Free Product</label></li>\n\t\t\t\t\t\t</ul>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div> -->\n\t\t\t\t\t<shopping-cart-summary \n\t\t\t\t\t\tv-if=\"products.length > 0\"\n\t\t\t\t\t\t:currency-symbol-right=\"currencySymbolRight\" \n\t\t\t\t\t\t:currency-symbol-left=\"currencySymbolLeft\"\n                  :minus-currency-symbol-left=\"minusCurrencySymbolLeft\"\n\t\t\t\t\t\t:productCount=\"productCount\"\n                  :productFreeCount=\"productFreeCount\"\n\t\t\t\t\t\t:totalPrice=\"totalPrice\"\n\t\t\t\t\t\t:retailTotalPrice=\"retailTotalPrice\"\n\t\t\t\t\t\t:percentOffName=\"percentOffName\"\n\t\t\t\t\t\t:percentSavings=\"percentSavings\"\n\t\t\t\t\t\t:percentOffNameSecond=\"percentOffNameSecond\"\n\t\t\t\t\t\t:percentSavingsSecond=\"percentSavingsSecond\"\n                  :isLoggedIn=\"isLoggedIn\"\n                  :totalMemberSave=\"totalMemberSave\"\n                  :membership=\"membership\"\n                  :scriptName=\"scriptName\"\n                  :couponAmount=\"couponAmount\"\n                  :enrollerFirst=\"enrollerFirst\"\n                  :shippingOrderCount=\"shippingOrderCount\"\n                  :retailOnly=\"retailOnly\"\n\t\t\t\t\t>\n\t\t\t\t\t</shopping-cart-summary>\n\t\t\t\t\t<div class=\"item-butn\">\n\t\t\t\t\t\t<ul>\n\t\t\t\t\t\t<li v-if=\"hasEnroller\"><a onclick=\"openReferrerConfirm()\" data-dismiss=\"modal\" data-toggle=\"modal\" data-target=\"#myModal\" href=\"#\">CHECKOUT</a></li>\n\t\t\t\t\t\t<li v-else ><a onclick=\"openReferrerName()\" data-dismiss=\"modal\" data-toggle=\"modal\" data-target=\"#myModal\" href=\"#\">CHECKOUT</a></li>\n\t\t\t\t\t\t<li><a @click=\"e => e.preventDefault() || this.closeCart()\" href=\"#\">CONTINUE SHOPPING</a></li>\n\t\t\t\t\t\t</ul>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t\t<!-- modal-content -->\n\t</div>\n</template>\n\n<script lang=\"ts\">\n    import ShoppingCartItem from './ShoppingCartItem.vue';\n\timport ShoppingCartNotification from './ShoppingCartNotification.vue'; \n\timport ShoppingCartSummary from './ShoppingCartSummary.vue';\n\timport { currencySymbols, euHempCountries } from '../currencySymbols.pl'\n\timport { countries } from '../countries.pl'\n\n    export default {\n        props: {\n\t\t\tproductDataJson: String,\n\t\t\thasEnroller: Boolean,\n\t\t\tisLoggedIn: Boolean,\n\t\t\tisPreenrollee: Boolean,\n         scriptName: String,\n         openCartInitially: Boolean,\n         coupon: Number,\n         enrollerFirst: String,\n         retailOnly:Number\n            /* products: Array */\n        },\n        components: {\n                'shopping-cart-item': ShoppingCartItem,\n\t\t'shopping-cart-notification': ShoppingCartNotification,\n\t        'shopping-cart-summary': ShoppingCartSummary,\n\t\t},\n\t\twatch: {\n\t\t\tcountryCode: function(newCountry,oldCountry) {\n\t\t\t\tif (newCountry && oldCountry) {\n\t\t\t\t\tthis.countryChangeReload()\t\n\t\t\t\t}\n\t\t\t},\n\t\t\tisOpen: function(isOpen) {\n\t\t\t\tif (isOpen) {\n\t\t\t\t\tjQuery(\"#myModal2\").modal('show')\n\t\t\t\t} else {\n\t\t\t\t\tjQuery(\"#myModal2\").modal('hide')\n\t\t\t\t}\n\t\t\t}\n\t\t},\n\t\tdata: function () {\n\t\t\treturn {\n\t\t\t\tisOpen: false,\n\t\t\t\tbvModalIsOpen: false,\n\t\t\t\titems: [],\n\t\t\t\tproducts: [],\n\t\t\t\tnotifications: [],\n\t\t\t\ttotalPrice: '0',\n\t\t\t\tretailTotalPrice: '0',\n\t\t\t\ttotalBV: 0,\n\t\t\t\tcountryCode: '',\n\t\t\t\tpercentSavings: 0,\n\t\t\t\tpercentOffName: '',\n\t\t\t\tpercentSavingsSecond: 0,\n\t\t\t\tpercentOffNameSecond: '',\n\t\t\t\tcountries,\n            totalMemberSave: '0',\n            membership:0,\n            couponAmount:0,\n            shippingOrderCount:0\n\t\t\t}\n\t\t},\n\t\tmethods: {\n\t\t\tcountryChangeReload: function() {\n\t\t\t\tshoppingCart.update({ country: this.countryCode }).then(function () {\n\t\t\t\t\tlocation.reload();\n\t\t\t\t});\n\t\t\t},\n\t\t\tisSpecialPackSubProduct(id) {\n\t\t\t\treturn /\\d+_\\d+/.test(id)\n\t\t\t},\n\t\t\tmapItemsToProductMeta: function () {\n\t\t\t\tlet vm = this;\n\t\t\t\tlet products = [];\n\t\t\t\tlet subProducts = []\n\t\t\t\tlet freeCounts = new Map();\n\t\t\t\tthis.items.forEach(function (item) {\n\t\t\t\t\tif (item.free) {\n\t\t\t\t\t\tlet productId = item.productId.replace(\"FREE_\", \"\");\n\t\t\t\t\t\tfreeCounts[productId] = item.quantity;\n\t\t\t\t\t\titem.productId = productId\n\t\t\t\t\t}\n\t\t\t\t});\n\n\n\t\t\t\tthis.items.forEach((item) => {\n\t\t\t\t\tif (this.isSpecialPackSubProduct(item.productId)) {\n\t\t\t\t\t\titem = {\n\t\t\t\t\t\t\t...item, \n\t\t\t\t\t\t\tisSpecialPackSubProduct: true,\n\t\t\t\t\t\t\tproductId: String(item.productId).match(/\\d+_(?<subpid>\\d+)/).groups.subpid\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t\tif (vm.productData[item.productId]) {\n\t\t\t\t\t\tlet product = {\n\t\t\t\t\t\t\t'id': item.productId,\n\t\t\t\t\t\t\t'name': vm.productData[item.productId].name,\n\t\t\t\t\t\t\t'price': vm.productData[item.productId].price,\n\t\t\t\t\t\t\t'bv': vm.productData[item.productId].bv,\n\t\t\t\t\t\t\t'quantity': item.quantity,\n\t\t\t\t\t\t\t'free': item.free,\n\t\t\t\t\t\t\t'freeCount': freeCounts[item.productId],\n\t\t\t\t\t\t\t'image': vm.productData[item.productId].image,\n\t\t\t\t\t\t\t'max': parseInt(vm.productData[item.productId].max, 10),\n\t\t\t\t\t\t\t'product_months': vm.productData[item.productId].product_months,\n\t\t\t\t\t\t\t'monthly_bv': vm.productData[item.productId].monthly_bv,\n\t\t\t\t\t\t\t'sale': vm.productData[item.productId].sale,\n\t\t\t\t         'saleMessage': vm.productData[item.productId].saleMessage,\n\t\t\t\t\t\t\t'salePrice': vm.productData[item.productId].salePrice,\n\t\t\t\t\t\t\t'isSpecialPackMainProduct': vm.productData[item.productId].isSpecialPackMainProduct,\n\t\t\t\t\t\t\t'isSpecialPackSubProduct': item.isSpecialPackSubProduct,\n\t\t\t\t\t\t\t'allowAutoship': (this.isLoggedIn && !this.isPreenrollee) && vm.productData[item.productId].allowAutoship,\n\t\t\t\t\t\t\t'autoship': item.autoship\n\t\t\t\t\t\t};\n\n\t\t\t\t\t\tif (vm.productData[item.productId].flavor) {\n\t\t\t\t\t\t\tproduct['flavor'] = vm.productData[item.productId].flavor;\n\t\t\t\t\t\t}\n\n\t\t\t\t\t\tif (vm.productData[item.productId].size) {\n\t\t\t\t\t\t\tproduct['size'] = vm.productData[item.productId].size;\n\t\t\t\t\t\t}\n\t\t\t\t\t\tif (vm.productData[item.productId].promoCartMessage) {\n\t\t\t\t\t\t\tproduct['promoCartMessage'] = vm.productData[item.productId].promoCartMessage;\n\t\t\t\t\t\t}\n\t\t\t\t\t\tif (vm.productData[item.productId].promoCartMessageLine2) {\n\t\t\t\t\t\t\tproduct['promoCartMessageLine2'] = vm.productData[item.productId].promoCartMessageLine2;\n\t\t\t\t\t\t}\n\t\t\t\t\t\tproducts.push(product);\n\t\t\t\t\t}\n\t\t\t\t});\n\n\t\t\t\tthis.items\t\n\t\t\t\t\t.map(p => String(p.productId).match(/(?<main>\\d+)_(?<sub>\\d+)/)?.groups)\n\t\t\t\t\t.filter(p => p)\n\t\t\t\t\t.map(m => ({\n\t\t\t\t\t\t...m, \n\t\t\t\t\t\tsub: products.find(({id}) => id == m.sub)\n\t\t\t\t\t}))\n\t\t\t\t\t.forEach(({main, sub}) => {\n\t\t\t\t\t\tconst p = products.find(({id}) => id == main)\n\t\t\t\t\t\tp.specialPackSubProducts = p.specialPackSubProducts\n\t\t\t\t\t\t\t? p.specialPackSubProducts.concat(sub)\n\t\t\t\t\t\t\t: [sub]\n\t\t\t\t\t})\n\n\t\t\t\tthis.products = products;\n\t\t\t},\n\t\t\tcloseCart: function (e) {\n\t\t\t\tthis.updateShoppingCartCount();\n\t\t\t\tthis.isOpen = false;\n\t\t\t},\n\t\t\tgetProducts: async function () {\n\t\t\t\tlet vm = this;\n\n\t\t\t\tawait shoppingCart.get().then(\n\t\t\t\t\tfunction (data) {\n\t\t\t\t\t\tvm.items = data.shoppingCartDetails || [];\n\t\t\t\t\t\tvm.mapItemsToProductMeta();\n\t\t\t\t\t\tvm.notifications = data.notifications || [];\n\t\t\t\t\t\tvm.totalPrice = Number(data.amount || 0).toFixed(2);\n\t\t\t\t\t\tvm.retailTotalPrice = Number(data.retailAmount || 0).toFixed(2);\n\t\t\t\t\t\tvm.totalBV = data.bv || 0;\n\t\t\t\t\t\tvm.countryCode = data.country;\n\t\t\t\t\t\tvm.percentSavings = Number(data.percentSavings).toFixed(2)\n\t\t\t\t\t\tvm.percentOffName = data.percentOffName\n\t\t\t\t\t\tvm.percentSavingsSecond = Number(data.percentSavingsSecond).toFixed(2)\n\t\t\t\t\t\tvm.percentOffNameSecond = data.percentOffNameSecond\n                  vm.couponAmount = Number(data.couponAmount || 0).toFixed(2)\n                  vm.shippingOrderCount =Number(data.shippingOrderCount ||0)\n                  if (vm.couponAmount>0 && vm.shippingOrderCount >0 && data.amount>0) {\n                     vm.totalPrice = Number(data.amount - vm.couponAmount ||0).toFixed(2);\n                     vm.retailTotalPrice = Number(data.retailAmount - vm.couponAmount ||0).toFixed(2);                             \n                  }\n                                                vm.totalMemberSave = Number(data.totalMemberSave  || 0).toFixed(2);\n                                                vm.membership = data.membership || 0;\n\t\t\t\t\t}\n\t\t\t\t);\n\t\t\t},\n\t\t\tchangeProduct({\n\t\t\t\tid: productID, \n\t\t\t\tquantity, \n\t\t\t\tautoship,\n\t\t\t\tisSpecialPackMainProduct, \n\t\t\t\tspecialPackSubProducts\n\t\t\t}) {\n\t\t\t\tlet vm = this;\n\n\t\t\t\tPromise.all(\n\t\t\t\t\t[productID].concat(\n\t\t\t\t\t\tisSpecialPackMainProduct\n\t\t\t\t\t\t\t? specialPackSubProducts\n\t\t\t\t\t\t\t\t.map(({id}) => `${productID}_${id}`)\n\t\t\t\t\t\t\t: []\n\t\t\t\t\t)\n\t\t\t\t\t.map(id => shoppingCart\n\t\t\t\t\t\t.setProduct(id, {quantity, autoship})\n\t\t\t\t\t)\n\t\t\t\t)\n\t\t\t\t.then(shoppingCart.get)\n\t\t\t\t.then(data => {\n\t\t\t\t\tvm.items = data.shoppingCartDetails || [];\n\t\t\t\t\tvm.mapItemsToProductMeta();\n\t\t\t\t\tvm.notifications = data.notifications || [];\n\t\t\t\t\tvm.totalPrice = Number(data.amount || 0).toFixed(2);\n\t\t\t\t\tvm.retailTotalPrice = Number(data.retailAmount || 0).toFixed(2);\n\t\t\t\t\tvm.totalBV = data.bv || 0;\n\t\t\t\t\tvm.percentSavings = Number(data.percentSavings).toFixed(2)\n\t\t\t\t\tvm.percentOffName = data.percentOffName\n\t\t\t\t\tvm.percentSavingsSecond = Number(data.percentSavingsSecond).toFixed(2)\n\t\t\t\t\tvm.percentOffNameSecond = data.percentOffNameSecond\n               vm.couponAmount = Number(data.couponAmount || 0).toFixed(2);\n               vm.shippingOrderCount =  Number(data.shippingOrderCount || 0)\n                  if (vm.couponAmount>0 && vm.shippingOrderCount >0 && data.amount>0) {\n                     vm.totalPrice = Number(data.amount - vm.couponAmount ||0).toFixed(2);\n                     vm.retailTotalPrice = Number(data.retailAmount - vm.couponAmount ||0).toFixed(2);\n                  }\n                                        vm.totalMemberSave = Number(data.totalMemberSave || 0).toFixed(2);\n                                        vm.membership = data.membership || 0;\n                                        vm.tax = Number(data.tax || 0).toFixed(2)\n\t\t\t\t})\n\t\t\t\t\n\t\t\t},\n\t\t\t// deleteProduct: function ({id: productID, quantity}) {\n\t\t\t// \tlet vm = this;\n\n\t\t\t// \tshoppingCart.deleteFromCart(productID, quantity).then(\n            //         function (data) {\n\t\t\t// \t\t\tvm.items = data.shoppingCartDetails || [];\n\t\t\t// \t\t\tvm.mapItemsToProductMeta();\n\t\t\t// \t\t\tvm.notifications = data.notifications || [];\n\t\t\t// \t\t\tvm.totalPrice = Number(data.amount || 0).toFixed(2);\n\t\t\t// \t\t\tvm.retailTotalPrice = Number(data.retailAmount || 0).toFixed(2);\n\t\t\t// \t\t\tvm.totalBV = data.bv || 0;\n\t\t\t// \t\t}\n            //     );\n\t\t\t// },\n\t\t\t// emptyCart: function () {\n\t\t\t// \tlet vm = this;\n\n\t\t\t// \tshoppingCart.clearCart().then(\n            //         function (data) {\n\t\t\t// \t\t\tvm.items = data.shoppingCartDetails || [];\n\t\t\t// \t\t\tvm.mapItemsToProductMeta();\n\t\t\t// \t\t\tvm.notifications = data.notifications || [];\n\t\t\t// \t\t\tvm.amount = Number(data.amount || 0).toFixed(2);\n\t\t\t// \t\t\tvm.totalBV = data.bv || 0;\n\t\t\t// \t\t}\n            //     );\n\t\t\t// },\n\t\t\topenCountryPopup: function () {\n\t\t\t\tthis.closeCart();\n\t\t\t\tdocument.getElementById(\"country-selector-popup\").style.display = \"flex\";\n\t\t\t},\n\t\t\topenBVModal: function () {\n\t\t\t\tthis.bvModalIsOpen = true;;\n\t\t\t},\n\t\t\tcloseBVModal: function () {\n\t\t\t\tthis.bvModalIsOpen = false;\n\t\t\t},\n\t\t\tupdateShoppingCartCount: function () {\n\t\t\t\tvar openCart = document.getElementById('openCart'),\n\t\t\t\t\topenCartMobile = document.getElementById('openCartMobile'),\n\t\t\t\t\tclassName = 'shopping-cart-item-count',\n\t\t\t\t\titemCount = 0;\n\n\t\t\t\titemCount = this.productCount \n            console.log(\"updating product Counts\",this.productCount)\n\t\t\t\tif (itemCount > 0) {\n\t\t\t\t\tif (openCart.getElementsByClassName(className).length == 0) {\n\t\t\t\t\t\tvar cartCountSpan = document.createElement('span');\n\t\t\t\t\t\tcartCountSpan.className = className;\n\t\t\t\t\t\tcartCountSpan.textContent = itemCount;\n\t\t\t\t\t\topenCart.appendChild(cartCountSpan);\n\t\t\t\t\t} else {\n\t\t\t\t\t\topenCart.getElementsByClassName(className)[0].innerHTML = itemCount;\n\t\t\t\t\t}\n\n\t\t\t\t\t if (openCartMobile.getElementsByClassName(className).length == 0) {\n\t\t\t\t\t \tvar cartCountSpan = document.createElement('span');\n\t\t\t\t\t \tcartCountSpan.className = className;\n\t\t\t\t\t \tcartCountSpan.textContent = itemCount;\n\t\t\t\t\t \topenCartMobile.appendChild(cartCountSpan);\n\t\t\t\t\t } else {\n\t\t\t\t\t \topenCartMobile.getElementsByClassName(className)[0].innerHTML = itemCount;\n\t\t\t\t\t }\n\t\t\t\t} else {\n\t\t\t\t\tif (openCart.getElementsByClassName(className).length > 0) {\n\t\t\t\t\t\tvar cartCountSpan = openCart.getElementsByClassName(className)[0]\n\t\t\t\t\t\t\n\t\t\t\t\t\tcartCountSpan.parentNode.removeChild(cartCountSpan);\n\t\t\t\t\t}\n\n\t\t\t\t\tif (openCartMobile.getElementsByClassName(className).length > 0) {\n\t\t\t\t\t \tvar cartCountSpan = openCartMobile.getElementsByClassName(className)[0]\n\t\t\t\t\t\t\n\t\t\t\t\t \tcartCountSpan.parentNode.removeChild(cartCountSpan);\n\t\t\t\t\t }\n\t\t\t\t}\n\t\t\t},\n\t\t},\n\t\tcreated: function () {\n\t\t\t// eventBus.$on('itemDeleted', product => {\n\t\t\t// \tthis.deleteProduct(product.id, product.quantity);\n\t\t\t// });\n\t\t\t// eventBus.$on('increaseQuantity', product => {\n\t\t\t// \tthis.setProductQuantity(product.id, product.quantity);\n\t\t\t// });\n\t\t\t// eventBus.$on('decreaseQuantity', product => {\n\t\t\t// \tthis.setProductQuantity(product.id, product.quantity);\n\t\t\t// });\n\t\t\t// eventBus.$on('changeQuantity', product => {\n\t\t\t// \tthis.setProductQuantity(product.id, product.quantity);\n\t\t\t// });\n\n\t\t},\n        computed: {\n\t\t\tvisibleProducts() {\n\t\t\t\treturn this.products\n\t\t\t\t\t.filter(p => !p.isSpecialPackSubProduct)\n\t\t\t},\n\t\t\tsortedCountries() {\n\t\t\t\tconst c = Object.entries(this.countries).filter(([code]) => code != 'US')\n\t\t\t\tc.sort(([c1,n1],[c2,n2]) => {\n\t\t\t\t\tif (n1 > n2) {\n\t\t\t\t\t\treturn 1\n\t\t\t\t\t} else if (n1 == n2) {\n\t\t\t\t\t\treturn 0\n\t\t\t\t\t} else {\n\t\t\t\t\t\treturn -1\n\t\t\t\t\t}\n\t\t\t\t})\n\t\t\t\treturn ['US'].concat(c.map(([code]) => code))\n\t\t\t},\n\t\t\tcountry: function () {\n\t\t\t\treturn this.countries[this.countryCode] || 'No country selected';\n\t\t\t},\n\t\t\tproductData: function () {\n\t\t\t\treturn JSON.parse(this.productDataJson)\n\t\t\t},\n\t\t\tproductsLink: function () {\n\t\t\t\t\treturn \"/products\"\n\t\t\t},\n\t\t\tstyles: function () {\n\t\t\t\tif (this.isOpen) {\n\t\t\t\t\treturn 'right: 0;';\n\t\t\t\t} else {\n\t\t\t\t\treturn 'right: -120%;';\n\t\t\t\t}\n\t\t\t},\n\t\t\tbvModalStyles: function () {\n\t\t\t\tif (this.bvModalIsOpen) {\n\t\t\t\t\treturn 'display: none;';\n\t\t\t\t} else {\n\t\t\t\t\treturn 'display: block;';\n\t\t\t\t}\n\t\t\t},\n\t\t\tcurrencySymbolLeft: function () {\n\t\t\t\tif (!euHempCountries[this.countryCode] && !currencySymbols.left[this.countryCode] && !currencySymbols.right[this.countryCode]) {\n\t\t\t\t\treturn currencySymbols.left.US\n\t\t\t\t} else {\n\t\t\t\t\treturn currencySymbols.left[this.countryCode]\n\t\t\t\t}\n\t\t\t},\n         minusCurrencySymbolLeft: function () {\n            if (!euHempCountries[this.countryCode] && !currencySymbols.left[this.countryCode] && !currencySymbols.right[this.countryCode]) {\n               return \"-\" + currencySymbols.left.US\n            } else {\n               return \"-\" + currencySymbols.left[this.countryCode]\n            }\n         },\n\t\t\tcurrencySymbolRight: function () {\n\t\t\t\tif (euHempCountries[this.countryCode] && this.countryCode != 'GB') {\n\t\t\t\t\treturn currencySymbols.right.EU\n\t\t\t\t} else {\n\t\t\t\t\treturn currencySymbols.right[this.countryCode]\n\t\t\t\t} \n\t\t\t},\n\t\t\tproductCount: function() {\n\t\t\t\treturn this.products\n\t\t\t\t\t.filter(({free}) => !free)\n\t\t\t\t\t.filter(({isSpecialPackSubProduct: c}) => !c)\n\t\t\t\t\t.reduce((a, {quantity}) => a + Number(quantity), 0)\n\t\t\t},\n\t\t\tproductFreeCount: function() {\n\t\t\t\treturn this.products\n\t\t\t\t\t.filter(({isSpecialPackSubProduct: c}) => !c)\n\t\t\t\t\t.filter(({free}) => free)\n\t\t\t\t\t.reduce((a, {quantity}) => a + Number(quantity), 0)\n\t\t\t}\n\t\t\t\t// totalPrice: function () {\n\t\t\t\t//     return this.products.reduce((sum, i) => sum + i.quantity * i.price, 0)\n\t\t\t\t// },\n\t\t\t\t// totalBV: function () {\n\t\t\t\t//     return this.products.reduce((sum, i) => sum + i.quantity * i.bv, 0)\n\t\t\t\t// }\n\t\t},\n\t\tmounted: async function () {\n\t\t\tawait this.getProducts()\n\t\t\tthis.updateShoppingCartCount()\n\t\t\tvar openCartBtn = document.getElementById('openCart')\n\t\t\t\t,openCartBtnMobile = document.getElementById('openCartMobile');\n\n\t\t\tlet vm = this;\n\n\n\t\t\topenCartBtn.addEventListener(\"click\", function () {\n\t\t\t\tvm.isOpen = true;\n\t\t\t\tvm.getProducts();\n\t\t\t});\n\n\t\t\t openCartBtnMobile.addEventListener(\"click\", function () {\n\t\t\t \tvm.isOpen = true;\n\t\t\t \tvm.getProducts();\n\t\t\t });\n                        console.log(\"in created\",this.openCartInitially)\n                        if (this.openCartInitially && !this.isOpen) {\n                           document.getElementById(\"openCart\").click()\n                           console.log(\"cart should be opening\")\n                        }\n\t\t}\n    }\n\n</script>\n\n<style>\n\t.active {\n\t\tcolor: red;\n\t\tright: 0;\n\t}\n\t.flex-column {\n\t\tdisplay: flex;\n\t\tflex-direction: column;\n\t}\n\t.space-between {\n\t\tjustify-content: space-between;\n\t}\n\t.parent-height {\n\t\tmax-height: 100%;\n\t}\n\t.fill {\n\t\tflex: 1;\n\t}\n</style>\n"]}, media: undefined });
+
+  };
+  /* scoped */
+  const __vue_scope_id__$5 = undefined;
+  /* module identifier */
+  const __vue_module_identifier__$5 = undefined;
+  /* functional template */
+  const __vue_is_functional_template__$5 = false;
+  /* style inject SSR */
+  
+  /* style inject shadow dom */
+  
+
+  
+  const __vue_component__$5 = /*#__PURE__*/__vue_normalize__(
+    { render: __vue_render__$5, staticRenderFns: __vue_staticRenderFns__$5 },
+    __vue_inject_styles__$5,
+    __vue_script__$5,
+    __vue_scope_id__$5,
+    __vue_is_functional_template__$5,
+    __vue_module_identifier__$5,
+    false,
+    __vue_create_injector__,
+    undefined,
+    undefined
+  );
+
+Vue.use(vueCustomElement);
+Vue.customElement('shopping-cart', __vue_component__$5, {
+  shadow: false
+});
+//# sourceMappingURL=main.js.map
